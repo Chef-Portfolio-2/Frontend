@@ -1,10 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
+import ReactDOM from "react-dom";
+import {BrowserRouter as Router, Route, Link} from "react-router-dom"
+import RecipePage from "./components/ChefPortfolio/RecipePage"
+
 import './App.css';
+
 
 function App() {
   return (
-    <div className="App">
-      
+    <div>
+      <Router>
+        <Route path="/recipepage/" component={RecipePage} />
+      </Router>
     </div>
   );
 }
