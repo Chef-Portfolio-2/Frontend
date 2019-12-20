@@ -9,6 +9,7 @@ const SiteTitle = styled.h1`
     width: 100%;
     text-align: center;
     font-size: 6rem;
+    
 `
 
 function Home() {
