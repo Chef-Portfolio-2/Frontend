@@ -13,7 +13,7 @@ function App() {
     <div>
       <Router>
         <Route path="/recipepage/" component={RecipePage} />
-        <Route path = "/login/" component = { LoginForm} />
+        <Route path = "/login/" component = {LoginForm} />
         {/* will change ChefPortolioPage to Private Route later */}
         <Route path= '/chefportfolio/' component = {ChefPortfolioPage} />
       </Router>

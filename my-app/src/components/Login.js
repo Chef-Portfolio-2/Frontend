@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import ReactDOM from "react-dom";
+import React from 'react';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 
-function LoginForm({ errors, touched }) {
+function LoginForm({errors, touched }) {
 
     return(
         <div className = "loginForm">
-            {console.log(user)};
+            {console.log()};
             <Form>
                 <div>
                     {touched.email && errors.email && <p>{errors.email}</p>}
@@ -47,9 +46,9 @@ const FormikLoginForm = withFormik({
         password: Yup.string().min(6, "Password must be 6 characters or longer").required("Password is required")
     }),
 
-    handleSubmit(values) {
-        console.log(values);
-    }
+    // handleSubmit(values) {
+    //     console.log(values);
+    // }
 })(LoginForm);
 
 export default FormikLoginForm;
