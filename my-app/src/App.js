@@ -13,8 +13,8 @@ import styled from "styled-components";
 const NavBar=styled.nav`
   display: flex;
   justify-content: space-around;
+  align-items: center;
   width: 70%;
-  border: 1px solid red;
   margin: auto;
 
 `
@@ -27,10 +27,19 @@ function App() {
     <div>
       <NavBar>
         <Link to="/" className="nav-links">
-          Chow
+          Home
         </Link>
         <Link to="/recipepage/" className="nav-links">
           Recipes
+        </Link>
+        <Link to="/" className="nav-links">
+          <span className="home-link">Chow</span>
+        </Link>
+        <Link to="/" className="nav-links">
+          Portfolio
+        </Link>
+        <Link to="/" className="nav-links">
+          Login
         </Link>
       </NavBar>
       <Route path="/recipepage/" component={RecipePage} />
