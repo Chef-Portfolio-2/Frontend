@@ -3,10 +3,33 @@
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
+    
 }
 .recipeList{
-    background: pink;
+    background-color: #c4c4c4;
     width: 500px;
     text-align: center;
+    margin: 1%;
+    height:400px;
+    line-height: 0rem;
+    padding-top: 30px;
+    /* display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+.recipeList h5{
+    text-align: end;
+    padding-right: 17%;
+}
+.typeName span{
+  
+    background-color: green !important;
+    color: wheat;
+    border-radius: 10%;
+    
+}
 
+.recipeImg{
+    border-radius: 8%;
 }

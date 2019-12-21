@@ -26,12 +26,14 @@ function ChefRecipeList() {
             <section  className = 'chef-list grid-view'>
                 {chef.map( chef => (
                     <div width ='400' className='recipeList' key={chef.id}>
-                        <h2> {chef.title}</h2>
-                        <img width='300'
-                        className ='chef-photo'
+                        
+                        <img width='350'
+                        className ='recipeImg'
                         src = {chef.image}
                         alt = {chef.title}
                         />
+                        <h5 className='typeName'><span>{chef.type}</span></h5>
+                        <h4> {chef.title}</h4>
                     </div>
                 ))}
             </section>
