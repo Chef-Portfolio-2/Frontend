@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './ChefPortfolioPage.css';
 
 
 function ChefRecipeList() {
@@ -9,7 +10,7 @@ function ChefRecipeList() {
 
     useEffect(() => {
         axios
-        .get('')
+        .get('http://localhost:3000/recipes')
         .then( res => {
             setChef(res.data);
         })
@@ -22,15 +23,15 @@ function ChefRecipeList() {
         <>
         <div>
             <h3>My Recipes</h3>
-            <section className = 'chef-list grid-view'>
+            <section  className = 'chef-list grid-view'>
                 {chef.map( chef => (
-                    <div key={chef.id}>
-                        <img
+                    <div width ='400' className='recipeList' key={chef.id}>
+                        <h2> {chef.title}</h2>
+                        <img width='300'
                         className ='chef-photo'
-                        src = {chef.item_photo}
-                        alt = {chef.chef_name}
+                        src = {chef.image}
+                        alt = {chef.title}
                         />
-                        <h2>{chef.chef_name}'s {chef.recipe.title}</h2>
                     </div>
                 ))}
             </section>

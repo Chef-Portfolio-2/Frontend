@@ -1,0 +1,12 @@
+.chef-list{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.recipeList{
+    background: pink;
+    width: 500px;
+    text-align: center;
+
+}
