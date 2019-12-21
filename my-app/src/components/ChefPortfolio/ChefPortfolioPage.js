@@ -5,10 +5,21 @@ import ChefRecipeList from './ChefRecipeList';
 
 function ChefPortfolioPage() {
     return(
-        <div>
+        <>
             <h1>Chef Portfolio Page</h1>
+            <div className='headContainer'>
+                <h2> Account </h2>
+                <div>
+                    <img src ='/' /> 
+                    <div className= 'chefInfo'>
+                        <p>Name: </p>
+                        <p>Email: </p>
+                        <p>Location: </p>
+                    </div>
+                </div>
+            </div>
             <ChefRecipeList />
-        </div>
+        </>
     )
 }
 export default ChefPortfolioPage
