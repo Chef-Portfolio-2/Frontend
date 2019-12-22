@@ -11,23 +11,25 @@
     text-align: center;
     margin: 1%;
     height:400px;
-    line-height: 0rem;
-    padding-top: 30px;
+    /* line-height: 0rem; */
+    /* padding-top: 30px; */
     /* display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; */
 }
-.recipeList h5{
-    text-align: end;
-    padding-right: 17%;
+.typeContainer{
+    display:flex;
+    justify-content: end;
+    flex-direction: row-reverse;
+    padding-right: 100px;
 }
-.typeName span{
-  
-    background-color: green !important;
+.typeName {
     color: wheat;
-    border-radius: 10%;
-    
+    width: 70px !important;
+     height: 20px !important;
+     background-color: #32b672 !important;
+     border-radius: 10%;
 }
 
 .recipeImg{

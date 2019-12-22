@@ -32,7 +32,9 @@ function ChefRecipeList() {
                         src = {chef.image}
                         alt = {chef.title}
                         />
+                        <div className='typeContainer'>
                         <h5 className='typeName'><span>{chef.type}</span></h5>
+                        </div>
                         <h4> {chef.title}</h4>
                     </div>
                 ))}
