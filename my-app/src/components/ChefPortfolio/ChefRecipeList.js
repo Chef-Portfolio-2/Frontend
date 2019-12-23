@@ -30,11 +30,13 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
                         />
                         <div className='typeContainer'>
                             <h5 className='typeName'> {chef.type}</h5>
-                            </div>
-                            <h4> {chef.title}</h4>
-                            <button className ='editButton'> Edit</button>
-                            <button className='deleteButton'>Delete</button>
                         </div>
+                            <h4> {chef.title}</h4>
+                            <div className='buttonContainer'>
+                                <button className ='editButton'> Edit</button>
+                                <button className='deleteButton'>Delete</button>
+                            </div>
+                    </div>
                    
                 ))}
             </section>

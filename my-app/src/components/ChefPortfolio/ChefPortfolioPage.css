@@ -36,3 +36,43 @@
 .recipeImg{
     border-radius: 8%;
 }
+
+.buttonContainer{
+    display: flex;
+    flex-direction: column;
+    width: 90px;
+    padding-left: 60px;
+
+
+}
+.editButton{
+    background-color: #32b672;
+    border: none;
+    margin:4%;
+    border-radius: 10%;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.editButton:hover{
+    background-color: black;
+    color: #32b672;
+    border: none;
+   
+}
+.deleteButton{
+    background-color: #32b672;
+    border: none;
+    margin: 4%;
+    border-radius: 10%;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.deleteButton:hover{
+    background-color: black;
+    color: #32b672;
+    border: none;
+}
