@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-// import {axiosWithAuth} from '../axiosAuthenticate/axiosWithAuth.js'
+import {axiosWithAuth} from '../axiosAuthenticate/axiosWithAuth.js'
 import './ChefPortfolioPage.css';
 
-const intialRecipe = {
+const initialRecipe = {
     recipe:""
 };
 
@@ -21,22 +21,21 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
         <div>
             <h3>My Recipes</h3>
             <section  className = 'chef-list grid-view'>
-                {chef.map( chef => (
-                    <div className= 'recipeContainer'>
-                        <div width ='400' className='recipeList' key={chef.id}>
-                            <img width='350'
+                {recipes.map( chef => (
+                    <div width ='400' className='recipeList' key={chef.id}>
+                        <img width='350'
                             className ='recipeImg'
                             src = {chef.image}
                             alt = {chef.title}
-                            />
-                            <div className='typeContainer'>
-                                <h5 className='typeName'> {chef.type}</h5>
+                        />
+                        <div className='typeContainer'>
+                            <h5 className='typeName'> {chef.type}</h5>
                             </div>
                             <h4> {chef.title}</h4>
+                            <button className ='editButton'> Edit</button>
+                            <button className='deleteButton'>Delete</button>
                         </div>
-                        <button className ='editButton'> Edit</button>
-                        <button className='deleteButton'>Delete</button>
-                    </div>
+                   
                 ))}
             </section>
         </div>
