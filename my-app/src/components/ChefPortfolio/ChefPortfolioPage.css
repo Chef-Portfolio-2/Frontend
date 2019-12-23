@@ -11,18 +11,16 @@
     text-align: center;
     margin: 1%;
     height:400px;
-    /* line-height: 0rem; */
-    /* padding-top: 30px; */
-    /* display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
+    line-height: 0rem;
+    padding-top: 30px;
 }
 .typeContainer{
     display:flex;
-    justify-content: end;
     flex-direction: row-reverse;
     padding-right: 100px;
+    height: 25px;
+    padding-bottom: 15px;
+
 }
 .typeName {
     color: wheat;
@@ -30,7 +28,10 @@
      height: 20px !important;
      background-color: #32b672 !important;
      border-radius: 10%;
-}
+     display:flex;
+    justify-content: center;
+    align-items: center;
+    }
 
 .recipeImg{
     border-radius: 8%;

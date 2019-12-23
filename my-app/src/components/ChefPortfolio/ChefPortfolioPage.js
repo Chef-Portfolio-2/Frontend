@@ -1,9 +1,23 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import ChefRecipeList from './ChefRecipeList';
+import axios from 'axios'
 
 
 function ChefPortfolioPage() {
+    //call on axios to get the chef's login info to populate here
+    const [chef, setChef] = useState([]);
+
+    useEffect(() => {
+        axios
+        .get('http://localhost:3000/recipes')
+        .then( res => {
+            setChef(res.data);
+        })
+        .catch(errors => {
+            console.log( 'The data was not returned', errors )
+        })
+    }, []);
     return(
         <>
             <h1>Chef Portfolio Page</h1>

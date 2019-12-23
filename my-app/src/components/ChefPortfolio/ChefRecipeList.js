@@ -25,17 +25,20 @@ function ChefRecipeList() {
             <h3>My Recipes</h3>
             <section  className = 'chef-list grid-view'>
                 {chef.map( chef => (
-                    <div width ='400' className='recipeList' key={chef.id}>
-                        
-                        <img width='350'
-                        className ='recipeImg'
-                        src = {chef.image}
-                        alt = {chef.title}
-                        />
-                        <div className='typeContainer'>
-                        <h5 className='typeName'><span>{chef.type}</span></h5>
+                    <div className= 'recipeContainer'>
+                        <div width ='400' className='recipeList' key={chef.id}>
+                            <img width='350'
+                            className ='recipeImg'
+                            src = {chef.image}
+                            alt = {chef.title}
+                            />
+                            <div className='typeContainer'>
+                                <h5 className='typeName'> {chef.type}</h5>
+                            </div>
+                            <h4> {chef.title}</h4>
                         </div>
-                        <h4> {chef.title}</h4>
+                        <button className ='editButton'> Edit</button>
+                        <button className='deleteButton'>Delete</button>
                     </div>
                 ))}
             </section>
