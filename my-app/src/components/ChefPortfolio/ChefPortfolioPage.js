@@ -24,7 +24,7 @@ function ChefPortfolioPage() {
             <div className='headContainer'>
                 <h2> Account </h2>
                 <div>
-                    <img src ='/' /> 
+                    <img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAiRjeHqC26SHWGgBOlwulRONJSgZXg1XNsybBoa-iPwgH1wHutQ&s' /> 
                     <div className= 'chefInfo'>
                         <p>Name: </p>
                         <p>Email: </p>
