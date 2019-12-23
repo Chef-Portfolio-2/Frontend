@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-// import {axiosWithAuth} from '../utils/axiosWithAuth.js'
+// import {axiosWithAuth} from '../axiosAuthenticate/axiosWithAuth.js'
 import './ChefPortfolioPage.css';
 
 const intialRecipe = {
@@ -14,7 +14,7 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
     const [editing, setEditing] = useState(false);
     const[recipeToEdit, setRecipeToEdit] = useState(initialRecipe);
     
-    
+
     
     return(
         <>
