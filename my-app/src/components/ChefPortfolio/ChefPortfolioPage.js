@@ -32,7 +32,7 @@ function ChefPortfolioPage() {
                     </div>
                 </div>
             </div>
-            <ChefRecipeList />
+            <ChefRecipeList recipes={chef} updateRecipes={setChef}/>
         </>
     )
 }

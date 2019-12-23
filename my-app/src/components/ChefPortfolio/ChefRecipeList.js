@@ -1,23 +1,20 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+// import {axiosWithAuth} from '../utils/axiosWithAuth.js'
 import './ChefPortfolioPage.css';
 
+const intialRecipe = {
+    recipe:""
+};
 
-function ChefRecipeList() {
-    const [chef, setChef] = useState([]);
-
-    useEffect(() => {
-        axios
-        .get('http://localhost:3000/recipes')
-        .then( res => {
-            setChef(res.data);
-        })
-        .catch(errors => {
-            console.log( 'The data was not returned', errors )
-        })
-    }, []);
+const ChefRecipeList = ({recipes, updateRecipes}) => {
+    console.log(recipes);
+    const [editing, setEditing] = useState(false);
+    const[recipeToEdit, setRecipeToEdit] = useState(initialRecipe);
+    
+    
     
     return(
         <>
