@@ -41,7 +41,12 @@ const RecipeContent = styled.p`
 `
 
 const RecipeTags = styled.div`
-  width: 25%;
+  width: 15%;
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height:100%;
 `;
 
 const RecipeTag = styled.div`

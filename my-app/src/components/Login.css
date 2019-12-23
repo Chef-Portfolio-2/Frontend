@@ -1,0 +1,10 @@
+* {
+    background-color: #BCE4CC;
+}
+
+.field {
+    background-color: white;
+    padding-bottom: 5%;
+    border: 1px solid black;
+    width: 80%;
+}

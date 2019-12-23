@@ -1,33 +1,84 @@
 import React from 'react';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
+import styled from "styled-components";
+import "./Login.css";
+
+
+const Login1 = styled.div`
+height: auto;
+width: auto;
+margin-left: 10%;
+margin-right: 10%;
+padding-top: 20%;
+padding-bottom: 20%;
+`
+
+const Login = styled.div`
+display: flex;
+align-content: center;
+justify-content: center;
+`
+const Label = styled.label`
+font-weight: 600;
+font-size: 20px;
+`
+
+const Form1 = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+padding-bottom: 5%;
+width: 70%;
+`
+const Button = styled.button`
+display: flex;
+margin-left: 50%;
+border: 1px solid white;
+border-radius: 50%;
+height: 60px; 
+width: 60px;
+background-color: #32B672;
+color: white;
+box-shadow: 2px 2px black; 
+`
+
+
 
 function LoginForm({errors, touched }) {
 
     return(
-        <div className = "loginForm">
-            {console.log()};
+        <Login1 className = "loginForm">
+            {console.log()}
             <Form>
-                <div>
+                <Login>
+                    <Form1>
                     {touched.email && errors.email && <p>{errors.email}</p>}
                     {/* shows error message */}
-                    <Field 
+                    <Label>Email:</Label>
+                    <Field className = "field"
                     type = "email"
                     name = "email"
                     placeholder = "Email"
                     />
-                </div>
-                <div>
+                    </Form1>
+                </Login>
+               
+                <Login>
+                    <Form1>
                     {touched.password && errors.password && <p>{errors.email}</p>}
-                    <Field
+                    <Label>Password:</Label>
+                    <Field className = "field"
                     type = "password"
                     name = "password"
                     placeholder = "Password"
                     />
-                    <button>Login Here!</button>
-                </div>
+                    </Form1>
+                </Login>
+                <Button type="submit">Login Here!</Button>
             </Form>
-        </div>
+        </Login1>
     );
 }
 
@@ -42,8 +93,8 @@ const FormikLoginForm = withFormik({
     // validation Schema:
 
     validationSchema: Yup.object().shape({
-        email: Yup.string().email("Email is not Valid").required("Please input an email"),
-        password: Yup.string().min(6, "Password must be 6 characters or longer").required("Password is required")
+        email: Yup.string().email("Email is not Valid").required("Required Field"),
+        password: Yup.string().min(6, "Password must be 6 characters or longer").required("Required Field")
     }),
 
     // handleSubmit(values) {

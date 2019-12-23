@@ -17,3 +17,32 @@ code {
   height: auto;
   margin-bottom: 20px;
 }
+
+.nav-links{
+  color: black; 
+  text-decoration: none;
+}
+
+.nav-links:visited{
+  color: black; 
+  text-decoration: none;
+}
+
+.home-link{
+  color: #32B672;
+  font-size: 1.5rem;
+}
+
+.home-title{
+  color: #32B672;
+}
+
+.home-image{
+  max-width: 100%;
+  margin: auto;
+}
+
+.home-container{
+  width: 80vw;
+  margin: auto;
+}
