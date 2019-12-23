@@ -43,6 +43,17 @@ background-color: #32B672;
 color: white;
 box-shadow: 2px 2px black; 
 `
+const A1 = styled.a`
+display: flex;
+align-content: center;
+justify-content: center;
+margin-left: 40%;
+margin-top: 2%;
+height: auto; 
+width: 30%;
+color: black;
+`
+
 
 
 
@@ -77,6 +88,7 @@ function LoginForm({errors, touched }) {
                     </Form1>
                 </Login>
                 <Button type="submit">Login Here!</Button>
+                <A1 href = "http://localhost:3000/Register/">New User? Register Here!</A1>
             </Form>
         </Login1>
     );
