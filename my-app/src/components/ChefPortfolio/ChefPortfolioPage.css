@@ -13,23 +13,66 @@
     height:400px;
     line-height: 0rem;
     padding-top: 30px;
-    /* display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
 }
-.recipeList h5{
-    text-align: end;
-    padding-right: 17%;
+.typeContainer{
+    display:flex;
+    flex-direction: row-reverse;
+    padding-right: 100px;
+    height: 25px;
+    padding-bottom: 15px;
+
 }
-.typeName span{
-  
-    background-color: green !important;
+.typeName {
     color: wheat;
-    border-radius: 10%;
-    
-}
+    width: 70px !important;
+     height: 20px !important;
+     background-color: #32b672 !important;
+     border-radius: 10%;
+     display:flex;
+    justify-content: center;
+    align-items: center;
+    }
 
 .recipeImg{
     border-radius: 8%;
+}
+
+.buttonContainer{
+    display: flex;
+    flex-direction: column;
+    width: 90px;
+    padding-left: 60px;
+
+
+}
+.editButton{
+    background-color: #32b672;
+    border: none;
+    margin:4%;
+    border-radius: 10%;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.editButton:hover{
+    background-color: black;
+    color: #32b672;
+    border: none;
+   
+}
+.deleteButton{
+    background-color: #32b672;
+    border: none;
+    margin: 4%;
+    border-radius: 10%;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.deleteButton:hover{
+    background-color: black;
+    color: #32b672;
+    border: none;
 }
