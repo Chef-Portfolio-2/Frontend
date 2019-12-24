@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import ReactDOM from 'react-dom';
 import ChefRecipeList from './ChefRecipeList';
 import axios from 'axios'
+import {axiosWithAuth} from '../axiosAuthenticate/axiosWithAuth';
+
 
 
 function ChefPortfolioPage() {
@@ -9,7 +10,7 @@ function ChefPortfolioPage() {
     const [chef, setChef] = useState([]);
 
     useEffect(() => {
-        axios
+        axiosWithAuth()
         .get('http://localhost:3000/recipes')
         .then( res => {
             setChef(res.data);
@@ -17,7 +18,7 @@ function ChefPortfolioPage() {
         .catch(errors => {
             console.log( 'The data was not returned', errors )
         })
-    }, []);
+    });
     return(
         <>
             <h1>Chef Portfolio Page</h1>
