@@ -14,6 +14,19 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
     const [editing, setEditing] = useState(false);
     const[recipeToEdit, setRecipeToEdit] = useState(initialRecipe);
     
+    const editRecipe = recipe => {
+        setEditing(true);
+        setRecipeToEdit(recipe);
+    };
+
+    const saveEdit = e => {
+        e.preventDefault();
+        axiosWithAuth()
+        .put('http://localhost:3000/recipes', recipeToEdit)
+        .then(res => {
+            setEditing(false)
+        })
+    };
 
     
     return(
