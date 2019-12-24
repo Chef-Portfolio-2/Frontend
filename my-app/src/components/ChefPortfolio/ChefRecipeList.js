@@ -53,7 +53,7 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
                             <h4> {chef.title}</h4>
                             <div className='buttonContainer'>
                                 <button className ='editButton'> Edit</button>
-                                <button className='deleteButton'>Delete</button>
+                                <button className='deleteButton' onClick={() => deleteRecipe(recipe)}>Delete</button>{''}
                             </div>
                     </div>
                    
