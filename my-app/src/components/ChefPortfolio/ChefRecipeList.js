@@ -28,6 +28,12 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
         })
     };
 
+    const deleteRecipe = recipe => {
+        axiosWithAuth()
+        .delete('http://localhost:3000/recipes')
+        .then(res => console.log(res))
+        .catch(res => console.log(err))
+    };
     
     return(
         <>
