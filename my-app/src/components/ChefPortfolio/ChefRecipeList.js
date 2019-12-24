@@ -22,17 +22,17 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
     const saveEdit = e => {
         e.preventDefault();
         axiosWithAuth()
-        .put('http://localhost:3000/recipes', recipeToEdit)
+        .put(`http://localhost:3000/recipes/${recipeToEdit}`, recipeToEdit)
         .then(res => {
             setEditing(false)
         })
     };
 
     const deleteRecipe = recipe => {
-        axiosWithAuth()
-        .delete('http://localhost:3000/recipes')
+        axios
+        .delete(`http://localhost:3000/recipes/${recipe.id}`)
         .then(res => console.log(res))
-        .catch(res => console.log(err))
+        .catch(err => console.log(err))
     };
     
     return(
@@ -53,7 +53,7 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
                             <h4> {chef.title}</h4>
                             <div className='buttonContainer'>
                                 <button className ='editButton'> Edit</button>
-                                <button className='deleteButton' onClick={() => deleteRecipe(recipe)}>Delete</button>{''}
+                                <button className='deleteButton' onClick={() => deleteRecipe(chef)} >Delete</button>{' '}
                             </div>
                     </div>
                    
