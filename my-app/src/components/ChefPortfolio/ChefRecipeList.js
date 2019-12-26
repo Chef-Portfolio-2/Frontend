@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import {axiosWithAuth} from '../axiosAuthenticate/axiosWithAuth.js'
 import './ChefPortfolioPage.css';
+import EditModal from '../editModal';
+
 
 const initialRecipe = {
     recipe:""
 };
 
 const ChefRecipeList = ({recipes, updateRecipes}) => {
-    console.log(recipes);
     const [editing, setEditing] = useState(false);
     const[recipeToEdit, setRecipeToEdit] = useState(initialRecipe);
     
@@ -60,7 +61,8 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
                 ))}
                 {editing && (
                     <form onSubmit = {saveEdit} >
-                        <legend> Edit Recipe</legend>
+                        <EditModal />
+                    
                     </form>
                 )}
             </section>
