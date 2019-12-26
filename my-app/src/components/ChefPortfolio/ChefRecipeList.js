@@ -38,7 +38,7 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
     return(
         <>
         <div>
-            <h3>My Recipes</h3>
+            <h3 className = 'RecipeListTitle'>My Recipes</h3>
             <section  className = 'chef-list grid-view'>
                 {recipes.map( chef => (
                     <div width ='400' className='recipeList' key={chef.id}>
@@ -52,12 +52,17 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
                         </div>
                             <h4> {chef.title}</h4>
                             <div className='buttonContainer'>
-                                <button className ='editButton'> Edit</button>
+                                <button className ='editButton' onClick={() => editRecipe(chef)}> Edit</button>
                                 <button className='deleteButton' onClick={() => deleteRecipe(chef)} >Delete</button>{' '}
                             </div>
                     </div>
                    
                 ))}
+                {editing && (
+                    <form onSubmit = {saveEdit} >
+                        <legend> Edit Recipe</legend>
+                    </form>
+                )}
             </section>
         </div>
         </>
