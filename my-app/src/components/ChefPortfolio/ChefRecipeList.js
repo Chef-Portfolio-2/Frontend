@@ -53,18 +53,13 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
                         </div>
                             <h4> {chef.title}</h4>
                             <div className='buttonContainer'>
-                                <button className ='editButton' onClick={() => editRecipe(chef)}> Edit</button>
+                                {/* <button className ='editButton' onClick={() => editRecipe(chef)}> Edit</button> */}
+                                <EditModal />
                                 <button className='deleteButton' onClick={() => deleteRecipe(chef)} >Delete</button>{' '}
                             </div>
                     </div>
                    
                 ))}
-                {editing && (
-                    <form onSubmit = {saveEdit} >
-                        <EditModal />
-                    
-                    </form>
-                )}
             </section>
         </div>
         </>

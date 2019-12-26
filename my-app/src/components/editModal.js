@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-
+import './ChefPortfolio/ChefPortfolioPage.css';
 const EditModal = (props) => {
   const {
-    buttonLabel,
     className
   } = props;
 
@@ -13,7 +12,9 @@ const EditModal = (props) => {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle}>{buttonLabel}</Button>
+        <div className='editButtonContainer'>
+      <Button className='editModalButton' onClick={toggle}>Edit</Button>
+      </div>
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
         <ModalBody>

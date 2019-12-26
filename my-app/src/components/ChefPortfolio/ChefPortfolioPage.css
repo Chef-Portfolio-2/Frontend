@@ -84,3 +84,12 @@ div .RecipeListTitle {
     color: #32b672;
     border: none;
 } */
+
+/* editModal */
+
+.editButtonContainer{
+    padding-right:340px;
+}
+.editButtonContainer .editModalButton {
+    padding: 0px;
+}
