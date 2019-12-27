@@ -1,4 +1,7 @@
 /* recipe section */
+.RecipeContainer{
+    height: 900px;
+}
 div .RecipeListTitle {
     text-align: center;
 }
@@ -49,6 +52,7 @@ div .RecipeListTitle {
     display: flex;
     flex-direction: column;
     padding-left: 60px;
+    padding-top: 15px;
 
 }
 .buttonContainer button{

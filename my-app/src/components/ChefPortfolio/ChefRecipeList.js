@@ -38,7 +38,7 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
     
     return(
         <>
-        <div>
+        <div className='RecipeContainer'>
             <h3 className = 'RecipeListTitle'>My Recipes</h3>
             <section  className = 'chef-list grid-view'>
                 {recipes.map( chef => (
