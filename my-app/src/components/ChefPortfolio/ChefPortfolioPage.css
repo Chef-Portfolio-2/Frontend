@@ -1,3 +1,10 @@
+/* recipe section */
+.RecipeContainer{
+    height: 900px;
+}
+div .RecipeListTitle {
+    text-align: center;
+}
 .chef-list{
     display:flex;
     justify-content: center;
@@ -10,9 +17,12 @@
     width: 500px;
     text-align: center;
     margin: 1%;
-    height:400px;
+    height:430px;
     line-height: 0rem;
     padding-top: 30px;
+}
+.recipeList h4{
+    font-size: 1.1rem;
 }
 .typeContainer{
     display:flex;
@@ -20,17 +30,18 @@
     padding-right: 100px;
     height: 25px;
     padding-bottom: 15px;
-
+    margin: 1%;
 }
 .typeName {
     color: wheat;
     width: 70px !important;
-     height: 20px !important;
+     height: 20px;
      background-color: #32b672 !important;
      border-radius: 10%;
      display:flex;
     justify-content: center;
     align-items: center;
+    font-size: .8rem;
     }
 
 .recipeImg{
@@ -40,28 +51,29 @@
 .buttonContainer{
     display: flex;
     flex-direction: column;
-    width: 90px;
     padding-left: 60px;
-
+    padding-top: 15px;
 
 }
-.editButton{
+.buttonContainer button{
     background-color: #32b672;
     border: none;
-    margin:4%;
+    margin:1%;
     border-radius: 10%;
     color: white;
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
+    width: 90px;
+    height: 20px;
 }
-.editButton:hover{
+.buttonContainer button:hover{
     background-color: black;
     color: #32b672;
     border: none;
    
 }
-.deleteButton{
+/* .deleteButton{
     background-color: #32b672;
     border: none;
     margin: 4%;
@@ -75,4 +87,13 @@
     background-color: black;
     color: #32b672;
     border: none;
+} */
+
+/* editModal */
+
+.editButtonContainer{
+    padding-right:340px;
+}
+.editButtonContainer .editModalButton {
+    padding: 0px;
 }

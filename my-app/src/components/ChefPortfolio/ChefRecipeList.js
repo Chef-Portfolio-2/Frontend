@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import {axiosWithAuth} from '../axiosAuthenticate/axiosWithAuth.js'
 import './ChefPortfolioPage.css';
+import EditModal from '../editModal';
+
 
 const initialRecipe = {
     recipe:""
 };
 
 const ChefRecipeList = ({recipes, updateRecipes}) => {
-    console.log(recipes);
     const [editing, setEditing] = useState(false);
     const[recipeToEdit, setRecipeToEdit] = useState(initialRecipe);
     
@@ -37,8 +38,8 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
     
     return(
         <>
-        <div>
-            <h3>My Recipes</h3>
+        <div className='RecipeContainer'>
+            <h3 className = 'RecipeListTitle'>My Recipes</h3>
             <section  className = 'chef-list grid-view'>
                 {recipes.map( chef => (
                     <div width ='400' className='recipeList' key={chef.id}>
@@ -52,7 +53,8 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
                         </div>
                             <h4> {chef.title}</h4>
                             <div className='buttonContainer'>
-                                <button className ='editButton'> Edit</button>
+                                {/* <button className ='editButton' onClick={() => editRecipe(chef)}> Edit</button> */}
+                                <EditModal />
                                 <button className='deleteButton' onClick={() => deleteRecipe(chef)} >Delete</button>{' '}
                             </div>
                     </div>
