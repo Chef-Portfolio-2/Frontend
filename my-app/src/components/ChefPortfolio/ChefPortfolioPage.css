@@ -1,3 +1,10 @@
+/* chef portfolio section */
+.headContainer{ background: pink;
+    width:500px;
+    margin: 1%;
+    text-align: center;
+}
+
 /* recipe section */
 .RecipeContainer{
     height: 900px;

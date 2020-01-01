@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import ChefRecipeList from './ChefRecipeList';
 import axios from 'axios'
 import {axiosWithAuth} from '../axiosAuthenticate/axiosWithAuth';
-
+import './ChefPortfolioPage.css';
 
 
 function ChefPortfolioPage() {
@@ -19,6 +19,17 @@ function ChefPortfolioPage() {
             console.log( 'The data was not returned', errors )
         })
     });
+    
+    // useEffect(() => {
+    //     axiosWithAuth()
+    //     .post('http://localhost:3000/recipes')
+    //     .then(res => {
+    //         setChef(res.data);
+    //     })
+    //     .catch(errors => {
+    //         console.log( 'The data did not POST', errors )
+    //     })
+    // })
     return(
         <>
             <div className='headContainer'>
@@ -31,6 +42,9 @@ function ChefPortfolioPage() {
                         <p>Location: </p>
                     </div>
                 </div>
+            </div>
+            <div className='addRecipe'>
+
             </div>
             <ChefRecipeList recipes={chef} updateRecipes={setChef}/>
         </>
