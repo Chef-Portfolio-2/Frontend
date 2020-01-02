@@ -11,6 +11,20 @@
       "title": "Lasagna",
       "image": "https://i1.wp.com/www.tastesoflizzyt.com/wp-content/uploads/2019/11/easy-lasagna-recipe-6.jpg?fit=767%2C511&ssl=1",
       "type": "Dinner"
+    },
+    {
+      "title": "example",
+      "image": "",
+      "type": "",
+      "file": "C:\\fakepath\\matthew-reyes-M7HTqk-U6Lw-unsplash.jpg",
+      "id": 3
+    },
+    {
+      "title": "Pizza",
+      "image": "",
+      "type": "food",
+      "file": "C:\\fakepath\\womenSuit.jpg",
+      "id": 4
     }
   ]
 }
