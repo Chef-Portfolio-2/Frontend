@@ -3,7 +3,7 @@ import ChefRecipeList from './ChefRecipeList';
 import axios from 'axios'
 import {axiosWithAuth} from '../axiosAuthenticate/axiosWithAuth';
 import './ChefPortfolioPage.css';
-
+import PostRecipe from './PostRecipe.js';
 
 function ChefPortfolioPage() {
     //call on axios to get the chef's login info to populate here
@@ -44,7 +44,7 @@ function ChefPortfolioPage() {
                 </div>
             </div>
             <div className='addRecipe'>
-
+            <PostRecipe />
             </div>
             <ChefRecipeList recipes={chef} updateRecipes={setChef}/>
         </>
