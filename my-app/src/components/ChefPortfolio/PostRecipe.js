@@ -15,7 +15,7 @@ import { axiosWithAuth } from '../axiosAuthenticate/axiosWithAuth.js';
     const handleSubmit = (event) => {
         event.preventDefault();
         axiosWithAuth()
-        .post( 'http://localhost:3000/recipe', postRecipe)
+        .post( 'http://localhost:3000/recipes', postRecipe)
         .then((res) => {
             console.log(res);
             setPostRecipe(defaultRecipe);
