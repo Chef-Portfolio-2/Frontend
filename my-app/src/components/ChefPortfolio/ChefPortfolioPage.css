@@ -1,13 +1,49 @@
 /* chef portfolio section */
-.headContainer{ background: pink;
-    margin: 1%;
+.headContainer{
+    margin: 3%;
+    padding-top: 1%;
     text-align: center;
     display:flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    height: 100%;
 }
-.addRecipe { background: peru;
+
+.postRecipeContainer{
     margin: 1%;
+    padding: 4%;
+    width: 300px;
+    border: 2px solid black;
+    background: #c4c4c4;
+    
+    height: 100%;
+    border-radius: 10%;
 }
+.postRecipeContainer form{
+    margin:1%;
+    padding: 5%;
+}
+
+.postRecipeContainer form .imageFile {
+    width: 220px;
+}
+.postRecipeContainer form .textFile{
+    margin: 7%;
+    border-radius: 4%;
+    border: 2px solid #32b672 ;
+    width: 210px;
+}
+
+.postRecipeContainer button{
+    background: #32b672 ;
+    border-radius: 7%;
+    border: none;
+    width: 100px;
+}
+.postRecipeContainer button:hover{
+    background-color: #2ca063 ;
+}
+
 
 /* recipe section */
 .RecipeContainer{

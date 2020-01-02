@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../axiosAuthenticate/axiosWithAuth.js';
+import './ChefPortfolioPage.css'
 
  const PostRecipe = (recipe) => {
     const defaultRecipe = {
@@ -28,22 +29,21 @@ import { axiosWithAuth } from '../axiosAuthenticate/axiosWithAuth.js';
         <div className='postRecipeContainer'>
             <h6>Add A Recipe</h6>
             <form onSubmit={handleSubmit}>
-                <input
+                <input className='imageFile'
                     type='file'
                     name='file'
                     value={recipe.image}
-                   
                     onChange={handleChange}
                 />
                 
-                <input 
+                <input className='textFile'
                     type='text'
                     name='title'
                     placeholder= 'Title'
                     value={recipe.title}
                     onChange={handleChange}
                 />
-                <input 
+                <input className='textFile'
                     type='text'
                     name='type'
                     placeholder='Type'
