@@ -33,19 +33,22 @@ function ChefPortfolioPage() {
     return(
         <>
             <div className='headContainer'>
-                <h3> Account </h3>
                 <div>
-                    <img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAiRjeHqC26SHWGgBOlwulRONJSgZXg1XNsybBoa-iPwgH1wHutQ&s' /> 
-                    <div className= 'chefInfo'>
-                        <p>Name: </p>
-                        <p>Email: </p>
-                        <p>Location: </p>
+                    <h3> Account </h3>
+                    <div>
+                        <img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAiRjeHqC26SHWGgBOlwulRONJSgZXg1XNsybBoa-iPwgH1wHutQ&s' /> 
+                        <div className= 'chefInfo'>
+                            <p>Name: </p>
+                            <p>Email: </p>
+                            <p>Location: </p>
+                        </div>
                     </div>
                 </div>
+                <div className='addRecipe'>
+                    <PostRecipe />
+                </div>
             </div>
-            <div className='addRecipe'>
-            <PostRecipe />
-            </div>
+            
             <ChefRecipeList recipes={chef} updateRecipes={setChef}/>
         </>
     )

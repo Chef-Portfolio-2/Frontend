@@ -1,8 +1,12 @@
 /* chef portfolio section */
 .headContainer{ background: pink;
-    width:500px;
     margin: 1%;
     text-align: center;
+    display:flex;
+    justify-content: space-around;
+}
+.addRecipe { background: peru;
+    margin: 1%;
 }
 
 /* recipe section */
