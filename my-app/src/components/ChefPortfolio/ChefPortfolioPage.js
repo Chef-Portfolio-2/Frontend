@@ -45,7 +45,7 @@ function ChefPortfolioPage() {
                     </div>
                 </div>
                 <div className='addRecipe'>
-                    <PostRecipe />
+                    <PostRecipe recipes={chef} updateRecipes={setChef}/>
                 </div>
             </div>
             

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { axiosAuthenticate } from '../axiosAuthenticate/axiosWithAuth';
+import { axiosWithAuth } from '../axiosAuthenticate/axiosWithAuth.js';
 
- const PostRecipe = () => {
+ const PostRecipe = (recipe) => {
     const defaultRecipe = {
         title: '',
 
@@ -12,9 +12,31 @@ import { axiosAuthenticate } from '../axiosAuthenticate/axiosWithAuth';
         setPostRecipe({ ...postRecipe, [event.target.name]: event.target.value });
     };
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        axiosWithAuth()
+        .post( 'http://localhost:3000/recipe', postRecipe)
+        .then((res) => {
+            console.log(res);
+            setPostRecipe(defaultRecipe);
+        })
+        .catch((err) => console.log(err));
+    }
+
     return (
         <div className='postRecipeContainer'>
             <h6>Add A Recipe</h6>
+            <form onSubmit={handleSubmit}>
+                
+                    <p>Title</p>
+                    <input 
+                        type='text'
+                        name='title'
+                        value={recipe.title}
+                        onChange={handleChange}
+                    />
+                <button type='submit'>Add Recipe</button>
+            </form>
         </div>
     )
 }
