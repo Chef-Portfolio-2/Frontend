@@ -43,6 +43,17 @@
 .postRecipeContainer button:hover{
     background-color: #2ca063 ;
 }
+.postRecipeContainer .reset{
+    margin:2%;
+    border-radius: 7%;
+    border: none;
+    width: 100px;
+    background-color: #32b672;
+}
+
+.postRecipeContainer .reset:hover {
+    background-color: #2ca063;
+}
 
 
 /* recipe section */

@@ -50,7 +50,15 @@ import './ChefPortfolioPage.css'
                     value={recipe.type}
                     onChange={handleChange}
                 />
+                 <textarea className='textFile'
+                    type='textarea'
+                    name='type'
+                    placeholder='Instructions'
+                    value={recipe.instructions}
+                    onChange={handleChange}
+                />
                 <button type='submit'>Add Recipe</button>
+                <input type='reset' className='reset' />
             </form>
         </div>
     )
