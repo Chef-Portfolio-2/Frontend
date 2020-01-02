@@ -8,7 +8,7 @@ import EditModal from '../editModal';
 
 
 const initialRecipe = {
-    recipe:""
+    recipe:" "
 };
 
 const ChefRecipeList = ({recipes, updateRecipes}) => {
@@ -58,7 +58,6 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
                                 <button className='deleteButton' onClick={() => deleteRecipe(chef)} >Delete</button>{' '}
                             </div>
                     </div>
-                   
                 ))}
             </section>
         </div>

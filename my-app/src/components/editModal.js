@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, FormText, Col } from 'reactstrap';
 import './ChefPortfolio/ChefPortfolioPage.css';
 import {axiosWithAuth} from './axiosAuthenticate/axiosWithAuth.js'
 
@@ -33,18 +33,30 @@ const EditModal = ({recipes}) => {
         <div className='editButtonContainer'>
       <Button className='editModalButton' onClick={toggle}>Edit</Button>
       </div>
-      <Modal isOpen={modal} toggle={toggle} >
+      <Modal isOpen={modal} toggle={toggle} OnClick={() => editRecipe(recipes)} >
         <ModalHeader toggle={toggle}>Edit Recipe</ModalHeader>
         <ModalBody>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            <Form>
-                <FormGroup>
-                    <Label></Label>
+          
+            <Form onSubmit={saveEdit} method="PUT">
+              <FormGroup row> 
+                <Label for="exampleFile" sm={2}>File</Label>
+                <Col sm={10}>
+                  <Input type="file" name="file" id="exampleFile"  />
+                  <FormText color="muted">
+                    Upload photos that are .JPEG, .JPG or .PNG.
+                  </FormText>
+                </Col>
+              </FormGroup>
+              <FormGroup>
+                <Label for="exampleText">Title</Label>
+                <Input type="text" name="text" id="exampleText" 
+                placeholder="Title" value={recipeToEdit.title} onChange={event => setRecipeToEdit({ ...recipeToEdit, title: event.target.value})} />
+              </FormGroup>
             </Form>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-          <Button color="secondary" onClick={toggle}>Cancel</Button>
+          <Button color="primary" onClick={toggle}>Save</Button>{' '}
+          <Button color="secondary" onClick={toggle} onClick={() => setEditing(false)}>Cancel</Button>
         </ModalFooter>
       </Modal>
     </div>
