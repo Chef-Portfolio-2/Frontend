@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {axiosWithAuth} from '../axiosAuthenticate/axiosWithAuth';
-
+import './Register.css';
 const initialUser = {
   username: '',
   password: '',
@@ -47,7 +47,8 @@ class Register extends Component {
 
   render() {
     return (
-      <div className='login'>
+      <div className='registerPage'>
+          <div>
         <form onSubmit={this.submitHandler}>
           <section>
             <h1>Welcome!<br/> Please register:</h1>
@@ -86,6 +87,7 @@ class Register extends Component {
           ? (<h4>{this.state.message}</h4>)
           : undefined
         }
+        </div>
       </div>
     )
   }
