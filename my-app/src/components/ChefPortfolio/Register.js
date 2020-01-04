@@ -1,97 +1,94 @@
-import React, { useState } from 'react';
-import { axiosWithAuth } from '../axiosAuthenticate/axiosWithAuth';
+import React, { Component } from 'react';
+import {axiosWithAuth} from '../axiosAuthenticate/axiosWithAuth';
 
-const RegisterChef = () => {
-    const defaultUser = {
-        firstname: '',
-        lastname: '',
-        username: '',
-        password: '',
-        email: '',
-        location: ''
-    };
-
-    const [chef, setChef] = useState(defaultUser);
-
-    const handleChange = (event) => {
-        setChef({ ...chef, [event.target.name]: event.target.value });
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        axiosWithAuth()
-        .post('/auth/register/', chef)
-        .then((res) => {
-            console.log(res);
-            localStorage.setItem('token', res.data.token);
-            localStorage.setItem('id',res.data.id);
-            localStorage.setItem('username', res.data.username);
-
-            setChef(defaultUser);
-        })
-        .catch((err) => console.log(err));
-    }
-
-    return (
-        <>
-            <div>
-                <h1>Create an Account</h1>
-                <form autoComplete='new-password' onSubmit={handleSubmit}>
-                <input
-                        type='text'
-                        name='firstname'
-                        placeholder='First Name'
-                        value={chef.firstname}
-                        onChange={handleChange}
-                        className='inputField'
-                    />
-                    <input
-                        type='text'
-                        name='Last Name'
-                        placeholder='Last Name'
-                        value={chef.lastname}
-                        onChange={handleChange}
-                        className='inputField'
-                    />
-                    <input
-                        type='text'
-                        name='username'
-                        placeholder='Username'
-                        value={chef.username}
-                        onChange={handleChange}
-                        className='inputField'
-                    />
-                    <input
-                        type='email'
-                        name='email'
-                        placeholder='Email'
-                        value={chef.email}
-                        onChange={handleChange}
-                        className='inputField'
-                    />
-                    <input
-                        type='password'
-                        name='password'
-                        placeholder='Password'
-                        value={chef.password}
-                        onChange={handleChange}
-                        className='inputField'
-                    />
-                    <input
-                        type='text'
-                        name='location'
-                        placeholder='City'
-                        value={chef.username}
-                        onChange={handleChange}
-                        className='inputField'
-                    />
-
-                    <input type='submit'></input>
-                    <input type='reset'></input>
-                </form>
-            </div>
-        </>
-    )
+const initialUser = {
+  username: '',
+  password: '',
 }
 
-export default RegisterChef
+class Register extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: { ...initialUser },
+      message: ''
+    }
+  }
+
+  inputHandler = (event) => {
+    const { name, value } = event.target;
+    this.setState({ user: { ...this.state.user, [name]: value } })
+  }
+
+  submitHandler = (event) => {
+    event.preventDefault();
+    axiosWithAuth()
+    .post(`http://localhost:3000/register`, this.state.user)
+      .then((res) => {
+        // if (res.status === 201) {
+        //   this.setState({
+        //     message: 'Registration Successful',
+        //     user: { ...initialUser },
+        //   })
+        //   this.props.history.push('/')
+        // } else {
+        //   throw new Error();
+        // }
+        localStorage.setItem('jwt', res.data.token)
+        this.props.history.push('/')
+      })
+      .catch(err => {
+        this.setState({
+          message: 'Registration failed',
+          user: { ...initialUser }
+        })
+      })
+  }
+
+  render() {
+    return (
+      <div className='login'>
+        <form onSubmit={this.submitHandler}>
+          <section>
+            <h1>Welcome!<br/> Please register:</h1>
+          </section>
+          <label htmlFor='username'>Username</label>
+          <input
+            className='Register-Input'
+            type='text'
+            id='username'
+            name='username'
+            value={this.state.user.username}
+            onChange={this.inputHandler}
+          />
+          <label htmlFor='password'>Password</label>
+          <input
+            className='Register-Input'
+            type='text'
+            id='password'
+            name='password'
+            value={this.state.user.password}
+            onChange={this.inputHandler}
+          />
+            <label htmlFor="email">Email</label>
+          <input
+            className='Register-Input'
+            type="text"
+            id="email"
+            name="email"
+            value={this.state.user.email}
+            onChange={this.inputHandler}
+            placeholder="(optional)"
+          />
+          <button className="login-btn" type='submit'>Submit</button>
+        </form>
+        {this.state.message
+          ? (<h4>{this.state.message}</h4>)
+          : undefined
+        }
+      </div>
+    )
+  }
+} 
+
+export default Register;
