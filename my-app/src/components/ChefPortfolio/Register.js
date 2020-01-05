@@ -49,7 +49,7 @@ class Register extends Component {
     return (
       <div className='registerPage'>
           <div>
-        <form onSubmit={this.submitHandler}>
+        <form className= 'form' onSubmit={this.submitHandler}>
           <section>
             <h1>Welcome!<br/> Please register:</h1>
           </section>
