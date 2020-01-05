@@ -19,5 +19,21 @@
       "file": "C:\\fakepath\\matthew-reyes-M7HTqk-U6Lw-unsplash.jpg",
       "id": 3
     }
+  ],
+  "register": [
+    {
+      "firstname": "",
+      "lastname": "",
+      "username": "",
+      "password": "",
+      "email": "",
+      "location": "",
+      "id": ""
+    },
+    {
+      "username": "test",
+      "password": "123",
+      "id": "QboFKpN"
+    }
   ]
 }

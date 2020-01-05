@@ -1,0 +1,15 @@
+.registerPage {
+    background-image: url(https://wallpaperaccess.com/full/271679.jpg);
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+.form{ background: pink; 
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    margin: 3%;
+}
