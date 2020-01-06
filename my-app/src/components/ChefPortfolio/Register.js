@@ -51,37 +51,70 @@ class Register extends Component {
           <div>
         <form className= 'form' onSubmit={this.submitHandler}>
           <section>
-            <h1>Welcome!<br/> Please register:</h1>
+            <h5 className='formTitle'> Share Your Favorites</h5>
+            <p>Sign up to share your own favorite recipes</p>
           </section>
-          <label htmlFor='username'>Username</label>
+
+          <input
+            className='Register-Input'
+            type='text'
+            id='firstname'
+            name='firstname'
+            placeholder='First Name'
+            value={this.state.user.username}
+            onChange={this.inputHandler}
+          />
+
+          <input
+            className='Register-Input'
+            type='text'
+            id='lastname'
+            name='lastname'
+            placeholder='Last Name'
+            value={this.state.user.username}
+            onChange={this.inputHandler}
+          />
+
           <input
             className='Register-Input'
             type='text'
             id='username'
             name='username'
+            placeholder='Username'
             value={this.state.user.username}
             onChange={this.inputHandler}
           />
-          <label htmlFor='password'>Password</label>
+
           <input
             className='Register-Input'
             type='text'
             id='password'
             name='password'
+            placeholder='Password'
             value={this.state.user.password}
             onChange={this.inputHandler}
           />
-            <label htmlFor="email">Email</label>
+          
           <input
             className='Register-Input'
             type="text"
             id="email"
             name="email"
+            placeholder="Email"
             value={this.state.user.email}
             onChange={this.inputHandler}
-            placeholder="(optional)"
           />
-          <button className="login-btn" type='submit'>Submit</button>
+
+          <input
+            className='Register-Input'
+            type='text'
+            id='location'
+            name='location'
+            placeholder='City, State'
+            value={this.state.user.username}
+            onChange={this.inputHandler}
+          />
+          <input className="register-btn" type='submit'/>
         </form>
         {this.state.message
           ? (<h4>{this.state.message}</h4>)

@@ -1,15 +1,39 @@
 .registerPage {
     background-image: url(https://wallpaperaccess.com/full/271679.jpg);
-    height: 600px;
+    min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-
+    display: flex;
+    justify-content: center;
 }
-.form{ background: pink; 
+.form{ background: white; 
     display:flex;
     flex-direction: column;
     justify-content: center;
     width: 500px;
-    margin: 3%;
+    margin:5%;
+    padding: 4%;
+    align-items: center;
+}
+
+.formTitle {
+    text-align: center;
+}
+
+.Register-Input {
+    width: 350px;
+    margin-bottom: 13px;
+    border-radius: 4.5px;
+    border: 1px solid #b6bdc5;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    text-indent: 5px;
+    color: #4e515e;
+}
+
+.Register-Input:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px 0px #1d87ff;    
+    -webkit-box-shadow: 0px 0px 5px 0px #1d87ff;
 }
