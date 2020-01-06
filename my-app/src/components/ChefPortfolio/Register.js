@@ -54,6 +54,13 @@ class Register extends Component {
           <section>
             <h5 className='formTitle'> Share Your Favorites</h5>
             <p>Sign up to share your own favorite recipes</p>
+            <div>
+              <img src={require('../../Images/facebook.png')} alt='fb' width='40'/>
+              <img src={require('../../Images/search.png')} alt='search' width='40'/>
+              <img src={require('../../Images/twitter.png')} alt='tw' width='40'/>
+              <img src={require('../../Images/yahoo-icon.png')} alt='yahoo'width='40' />
+
+            </div>
           </section>
 
           <input
@@ -115,12 +122,12 @@ class Register extends Component {
             value={this.state.user.username}
             onChange={this.inputHandler}
           />
-          <input className="register-btn" type='submit'/>
+          <button className="register-btn" type='submit'>Sign Up</button>
 
-          <div>
+          <div className='registerFooter'>
             <p>By signing up you agree to ch0w.now.sh's <Link to='/TermsAndUse'><span>Terms of Use</span></Link> and <Link to='/PrivacyPolicy'><span>Privacy Policy</span></Link></p>
           </div>
-          <div>Already have an account? <Link to='/login'><span>Log In</span></Link></div>
+          <div className='registerFooter'>Already have an account? <Link to='/login'><span>Log In</span></Link></div>
         </form>
         {this.state.message
           ? (<h4>{this.state.message}</h4>)
