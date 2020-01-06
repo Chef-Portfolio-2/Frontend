@@ -15,10 +15,13 @@
     margin:5%;
     padding: 4%;
     align-items: center;
+    font-family: "Muli", sans-serif;
 }
 
 .formTitle {
     text-align: center;
+   font-family: "Muli", sans-serif;
+   font-weight: 600;
 }
 
 .Register-Input {
@@ -30,10 +33,26 @@
     box-sizing: border-box;
     text-indent: 5px;
     color: #4e515e;
+    font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .Register-Input:focus {
     outline: none;
     box-shadow: 0px 0px 5px 0px #1d87ff;    
     -webkit-box-shadow: 0px 0px 5px 0px #1d87ff;
+}
+
+.form .register-btn {
+    padding: 5px 16px 0;
+    width: auto;
+    height: 37px;
+    background: red;
+    border-radius: 3px;
+    background-image: linear-gradient(-180deg, hsla(0,0%,100%, .1), rgba(0,0,0,.1));
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    border: none;
+    color: white;
 }

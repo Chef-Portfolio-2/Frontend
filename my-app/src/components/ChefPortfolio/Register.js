@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {axiosWithAuth} from '../axiosAuthenticate/axiosWithAuth';
+import { Link }from 'react-router-dom';
 import './Register.css';
 const initialUser = {
   username: '',
@@ -35,7 +36,7 @@ class Register extends Component {
         //   throw new Error();
         // }
         localStorage.setItem('jwt', res.data.token)
-        this.props.history.push('/')
+        this.props.history.push('/login')
       })
       .catch(err => {
         this.setState({
@@ -115,6 +116,11 @@ class Register extends Component {
             onChange={this.inputHandler}
           />
           <input className="register-btn" type='submit'/>
+
+          <div>
+            <p>By signing up you agree to ch0w.now.sh's <Link to='/TermsAndUse'><span>Terms of Use</span></Link> and <Link to='/PrivacyPolicy'><span>Privacy Policy</span></Link></p>
+          </div>
+          <div>Already have an account? <Link to='/login'><span>Log In</span></Link></div>
         </form>
         {this.state.message
           ? (<h4>{this.state.message}</h4>)
