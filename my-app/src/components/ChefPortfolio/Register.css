@@ -25,7 +25,7 @@
 }
 
 .form div {
-    margin: 13px;
+    margin: 20px;
     display: flex;
     justify-content: center;
 }
@@ -65,7 +65,7 @@
     font-weight: bolder;
     border: none;
     color: white;
-    margin: 4%;
+    margin: 2%;
 }
 
 .registerFooter {

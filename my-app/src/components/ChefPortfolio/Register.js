@@ -127,7 +127,7 @@ class Register extends Component {
           <div className='registerFooter'>
             <p>By signing up you agree to ch0w.now.sh's <Link to='/TermsAndUse'><span>Terms of Use</span></Link> and <Link to='/PrivacyPolicy'><span>Privacy Policy</span></Link></p>
           </div>
-          <div className='registerFooter'>Already have an account? <Link to='/login'><span>Log In</span></Link></div>
+          <p className='registerFooter'>Already have an account?<Link to='/login'><span> Log In </span></Link></p>
         </form>
         {this.state.message
           ? (<h4>{this.state.message}</h4>)
