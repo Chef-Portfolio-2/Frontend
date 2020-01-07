@@ -35,10 +35,10 @@ function App() {
         <Link to="/" className="nav-links">
           <span className="home-link">Chow</span>
         </Link>
-        <Link to="/" className="nav-links">
+        <Link to="/chefportfolio" className="nav-links">
           Portfolio
         </Link>
-        <Link to="/" className="nav-links">
+        <Link to="/login" className="nav-links">
           Login
         </Link>
       </NavBar>
@@ -48,6 +48,7 @@ function App() {
       {/* will change ChefPortolioPage to Private Route later */}
       <Route path="/chefportfolio/" component={ChefPortfolioPage} />
       <Route path='/Register' component={RegisterChef} />
+      
     </div>
   );
 }

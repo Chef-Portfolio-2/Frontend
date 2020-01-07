@@ -13,11 +13,34 @@
       "type": "Dinner"
     },
     {
-      "title": "example",
-      "image": "",
-      "type": "",
-      "file": "C:\\fakepath\\matthew-reyes-M7HTqk-U6Lw-unsplash.jpg",
-      "id": 3
+      "id": 3,
+      "title": "Port-Stained Beef Medallions",
+      "image": "https://www.campbellsmeat.com/images/products/large_vertical/1467035656beeftournedous.jpg",
+      "type": "Dinner"
+    },
+    {
+      "id": 4,
+      "title": "Fluffy Pancakes",
+      "image": "https://media.eggs.ca/assets/RecipePhotos/_resampled/FillWyIxMjgwIiwiNzIwIl0/Fluffy-Pancakes-New-CMS.jpg",
+      "type": "Breakfast"
+    },
+    {
+      "id": 5,
+      "title": "Ultimate Chocolate Chip Cookies",
+      "image": "https://images-gmi-pmc.edge-generalmills.com/087d17eb-500e-4b26-abd1-4f9ffa96a2c6.jpg",
+      "type": "Dessert"
+    },
+    {
+      "id": 6,
+      "title": "Classic Chicken Salad",
+      "image": "https://www.spendwithpennies.com/wp-content/uploads/2019/08/Chicken-Salad-Sandwich-SpendWithPennies-3.jpg",
+      "type": "Lunch"
+    },
+    {
+      "id": 7,
+      "title": "Kansas City-Style Barbecue Ribs Recipe",
+      "image": "https://www.seriouseats.com/recipes/images/2016/06/20150730-anova-sous-vide-rib-guide-food-lab-primary-wet-white-j-kenji-lopez-alt.jpg",
+      "type": "Dinner"
     }
   ],
   "register": [
