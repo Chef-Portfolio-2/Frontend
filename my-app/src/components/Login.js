@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import styled from "styled-components";
 import "./Login.css";
+import Axios from 'axios';
 
 
 const Login1 = styled.div`
@@ -59,6 +60,7 @@ color: black;
 
 function LoginForm({errors, touched }) {
 
+
     return(
         <Login1 className = "loginForm">
             {console.log()}
@@ -109,9 +111,16 @@ const FormikLoginForm = withFormik({
         password: Yup.string().min(6, "Password must be 6 characters or longer").required("Required Field")
     }),
 
-    // handleSubmit(values) {
-    //     console.log(values);
-    // }
+    // handle submit
+    handleSubmit(values) {
+        Axios
+            .post("https://reqres.in/api/users/", values)
+            .then(response => {
+                console.log(response);
+                
+            })
+            .catch(error => console.log(error.response));
+    }
 })(LoginForm);
 
 export default FormikLoginForm;
