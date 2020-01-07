@@ -18,7 +18,7 @@ function ChefPortfolioPage() {
         .catch(errors => {
             console.log( 'The data was not returned', errors )
         })
-    });
+    }, [chef]);
     
     // useEffect(() => {
     //     axiosWithAuth()
