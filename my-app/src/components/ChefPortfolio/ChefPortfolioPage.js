@@ -4,6 +4,7 @@ import axios from 'axios'
 import {axiosWithAuth} from '../axiosAuthenticate/axiosWithAuth';
 import './ChefPortfolioPage.css';
 import PostRecipe from './PostRecipe.js';
+import NavBarSignOut from '../NavBars/NavBarSignOut';
 
 function ChefPortfolioPage() {
     //call on axios to get the chef's login info to populate here
@@ -32,6 +33,7 @@ function ChefPortfolioPage() {
     // })
     return(
         <>
+            <NavBarSignOut />
             <div className='headContainer'>
                 <div>
                     <h3> Account </h3>
