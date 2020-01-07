@@ -35,7 +35,7 @@ function App() {
         <Link to="/" className="nav-links">
           <span className="home-link">Chow</span>
         </Link>
-        <Link to="/" className="nav-links">
+        <Link to="/chefportfolio" className="nav-links">
           Portfolio
         </Link>
         <Link to="/" className="nav-links">
