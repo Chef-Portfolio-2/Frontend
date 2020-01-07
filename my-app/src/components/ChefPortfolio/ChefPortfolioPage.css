@@ -1,3 +1,68 @@
+/* chef portfolio section */
+.headContainer{
+    margin: 3%;
+    padding-top: 1%;
+    text-align: center;
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.postRecipeContainer{
+    margin: 1%;
+    padding: 4%;
+    width: 300px;
+    border: 2px solid black;
+    background: #c4c4c4;
+    
+    height: 100%;
+    border-radius: 10%;
+}
+.postRecipeContainer form{
+    margin:1%;
+    padding: 5%;
+}
+
+.postRecipeContainer form .imageFile {
+    width: 220px;
+}
+.postRecipeContainer form .textFile{
+    margin: 7%;
+    border-radius: 4%;
+    border: 2px solid #32b672 ;
+    width: 210px;
+}
+
+.postRecipeContainer button{
+    background: #32b672 ;
+    border-radius: 7%;
+    border: none;
+    width: 100px;
+}
+.postRecipeContainer button:hover{
+    background-color: #2ca063 ;
+}
+.postRecipeContainer .reset{
+    margin:2%;
+    border-radius: 7%;
+    border: none;
+    width: 100px;
+    background-color: #32b672;
+}
+
+.postRecipeContainer .reset:hover {
+    background-color: #2ca063;
+}
+
+
+/* recipe section */
+.RecipeContainer{
+    height: 900px;
+}
+div .RecipeListTitle {
+    text-align: center;
+}
 .chef-list{
     display:flex;
     justify-content: center;
@@ -10,26 +75,83 @@
     width: 500px;
     text-align: center;
     margin: 1%;
-    height:400px;
+    height:430px;
     line-height: 0rem;
     padding-top: 30px;
-    /* display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
 }
-.recipeList h5{
-    text-align: end;
-    padding-right: 17%;
+.recipeList h4{
+    font-size: 1.1rem;
 }
-.typeName span{
-  
-    background-color: green !important;
+.typeContainer{
+    display:flex;
+    flex-direction: row-reverse;
+    padding-right: 100px;
+    height: 25px;
+    padding-bottom: 15px;
+    margin: 1%;
+}
+.typeName {
     color: wheat;
-    border-radius: 10%;
-    
-}
+    width: 70px !important;
+     height: 20px;
+     background-color: #32b672 !important;
+     border-radius: 10%;
+     display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .8rem;
+    }
 
 .recipeImg{
     border-radius: 8%;
+}
+
+.buttonContainer{
+    display: flex;
+    flex-direction: column;
+    padding-left: 60px;
+    padding-top: 15px;
+
+}
+.buttonContainer button{
+    background-color: #32b672;
+    border: none;
+    margin:1%;
+    border-radius: 10%;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 90px;
+    height: 20px;
+}
+.buttonContainer button:hover{
+    background-color: black;
+    color: #32b672;
+    border: none;
+   
+}
+/* .deleteButton{
+    background-color: #32b672;
+    border: none;
+    margin: 4%;
+    border-radius: 10%;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.deleteButton:hover{
+    background-color: black;
+    color: #32b672;
+    border: none;
+} */
+
+/* editModal */
+
+.editButtonContainer{
+    padding-right:340px;
+}
+.editButtonContainer .editModalButton {
+    padding: 0px;
 }

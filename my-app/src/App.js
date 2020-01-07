@@ -8,7 +8,7 @@ import LoginForm from "./components/Login";
 
 import './App.css';
 import ChefPortfolioPage from './components/ChefPortfolio/ChefPortfolioPage';
-
+import RegisterChef from './components/ChefPortfolio/Register.js';
 import styled from "styled-components";
 
 const NavBar=styled.nav`
@@ -48,6 +48,7 @@ function App() {
       {/* <Route path = "/Register/" component={Register}/> */}
       {/* will change ChefPortolioPage to Private Route later */}
       <Route path="/chefportfolio/" component={ChefPortfolioPage} />
+      <Route path='/Register' component={RegisterChef} />
     </div>
   );
 }

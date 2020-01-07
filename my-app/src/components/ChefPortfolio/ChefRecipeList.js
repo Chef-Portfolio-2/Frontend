@@ -1,39 +1,62 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import {axiosWithAuth} from '../axiosAuthenticate/axiosWithAuth.js'
 import './ChefPortfolioPage.css';
+import EditModal from '../editModal';
 
 
-function ChefRecipeList() {
-    const [chef, setChef] = useState([]);
+const initialRecipe = {
+    recipe:" "
+};
 
-    useEffect(() => {
+const ChefRecipeList = ({recipes, updateRecipes}) => {
+    const [editing, setEditing] = useState(false);
+    const[recipeToEdit, setRecipeToEdit] = useState(initialRecipe);
+    
+    const editRecipe = recipe => {
+        setEditing(true);
+        setRecipeToEdit(recipe);
+    };
+
+    const saveEdit = e => {
+        e.preventDefault();
+        axiosWithAuth()
+        .put(`http://localhost:3000/recipes/${recipeToEdit}`, recipeToEdit)
+        .then(res => {
+            setEditing(false)
+        })
+    };
+
+    const deleteRecipe = recipe => {
         axios
-        .get('http://localhost:3000/recipes')
-        .then( res => {
-            setChef(res.data);
-        })
-        .catch(errors => {
-            console.log( 'The data was not returned', errors )
-        })
-    }, []);
+        .delete(`http://localhost:3000/recipes/${recipe.id}`)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    };
     
     return(
         <>
-        <div>
-            <h3>My Recipes</h3>
+        <div className='RecipeContainer'>
+            <h3 className = 'RecipeListTitle'>My Recipes</h3>
             <section  className = 'chef-list grid-view'>
-                {chef.map( chef => (
+                {recipes.map( chef => (
                     <div width ='400' className='recipeList' key={chef.id}>
-                        
                         <img width='350'
-                        className ='recipeImg'
-                        src = {chef.image}
-                        alt = {chef.title}
+                            className ='recipeImg'
+                            src = {chef.image}
+                            alt = {chef.title}
                         />
-                        <h5 className='typeName'><span>{chef.type}</span></h5>
-                        <h4> {chef.title}</h4>
+                        <div className='typeContainer'>
+                            <h5 className='typeName'> {chef.type}</h5>
+                        </div>
+                            <h4> {chef.title}</h4>
+                            <div className='buttonContainer'>
+                                {/* <button className ='editButton' onClick={() => editRecipe(chef)}> Edit</button> */}
+                                <EditModal />
+                                <button className='deleteButton' onClick={() => deleteRecipe(chef)} >Delete</button>{' '}
+                            </div>
                     </div>
                 ))}
             </section>
