@@ -25,23 +25,6 @@ const NavBar=styled.nav`
 function App() {
   return (
     <div>
-      <NavBar>
-        <Link to="/" className="nav-links">
-          Home
-        </Link>
-        <Link to="/recipepage/" className="nav-links">
-          Recipes
-        </Link>
-        <Link to="/" className="nav-links">
-          <span className="home-link">Chow</span>
-        </Link>
-        <Link to="/chefportfolio" className="nav-links">
-          Portfolio
-        </Link>
-        <Link to="/login" className="nav-links">
-          Login
-        </Link>
-      </NavBar>
       <Route path="/recipepage/" component={RecipePage} />
       <Route exact path="/" component={Home} />
       {/* <Route path = "/login/" component = { LoginForm} /> */}
