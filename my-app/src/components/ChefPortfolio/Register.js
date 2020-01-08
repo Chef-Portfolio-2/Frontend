@@ -25,7 +25,7 @@ class Register extends Component {
   submitHandler = (event) => {
     event.preventDefault();
     axiosWithAuth()
-    .post(`http://localhost:3000/register`, this.state.user)
+    .post(`https://chef-portfolio-2.herokuapp.com/api/auth/register`, this.state.user)
       .then((res) => {
         // if (res.status === 201) {
         //   this.setState({
@@ -41,7 +41,7 @@ class Register extends Component {
       })
       .catch(err => {
         this.setState({
-          message: 'Registration failed',
+          message: 'Sorry try registering again',
           user: { ...initialUser }
         })
       })
@@ -66,7 +66,7 @@ class Register extends Component {
             </div>
           </section>
 
-          <input
+          {/* <input
             className='Register-Input'
             type='text'
             id='firstname'
@@ -84,7 +84,7 @@ class Register extends Component {
             placeholder='Last Name'
             value={this.state.user.lastname}
             onChange={this.inputHandler}
-          />
+          /> */}
 
           <input
             className='Register-Input'

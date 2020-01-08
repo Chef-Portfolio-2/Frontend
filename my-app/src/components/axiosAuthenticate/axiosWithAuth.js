@@ -4,7 +4,7 @@ export const axiosWithAuth = () => {
     const token = localStorage.getItem('token');
 
     return axios.create({
-        baseURL: 'https://chef-portfolio.herokuapp.com/api/auth/register',
+        baseURL: 'https://chef-portfolio-2.herokuapp.com',
         headers: {
             'Content-Type': 'application/json',
            Authorization: token,
