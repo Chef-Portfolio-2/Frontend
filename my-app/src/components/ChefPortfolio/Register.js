@@ -25,7 +25,7 @@ class Register extends Component {
   submitHandler = (event) => {
     event.preventDefault();
     axiosWithAuth()
-    .post(`http://localhost:3000/register`, this.state.user)
+    .post(`https://chef-portfolio-2.herokuapp.com/api/auth/register`, this.state.user)
       .then((res) => {
         // if (res.status === 201) {
         //   this.setState({
@@ -41,7 +41,7 @@ class Register extends Component {
       })
       .catch(err => {
         this.setState({
-          message: 'Registration failed',
+          message: 'Sorry try registering again',
           user: { ...initialUser }
         })
       })
@@ -66,13 +66,13 @@ class Register extends Component {
             </div>
           </section>
 
-          <input
+          {/* <input
             className='Register-Input'
             type='text'
             id='firstname'
             name='firstname'
             placeholder='First Name'
-            value={this.state.user.username}
+            value={this.state.user.firstname}
             onChange={this.inputHandler}
           />
 
@@ -82,9 +82,9 @@ class Register extends Component {
             id='lastname'
             name='lastname'
             placeholder='Last Name'
-            value={this.state.user.username}
+            value={this.state.user.lastname}
             onChange={this.inputHandler}
-          />
+          /> */}
 
           <input
             className='Register-Input'
@@ -98,7 +98,7 @@ class Register extends Component {
 
           <input
             className='Register-Input'
-            type='text'
+            type='password'
             id='password'
             name='password'
             placeholder='Password'
@@ -118,11 +118,11 @@ class Register extends Component {
 
           <input
             className='Register-Input'
-            type='text'
-            id='location'
-            name='location'
-            placeholder='City, State'
-            value={this.state.user.username}
+            type="text"
+            id="location"
+            name="location"
+            placeholder="City, State"
+            value={this.state.user.location}
             onChange={this.inputHandler}
           />
           <button className="register-btn" type='submit'>Sign Up</button>
