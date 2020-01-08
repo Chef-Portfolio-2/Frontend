@@ -46,12 +46,12 @@ function LoginForm({errors, touched, Values}) {
           <Welcome className="Welcome">
             Welcome back! Please sign in.
           </Welcome>
-          {touched.username && errors.username && <p>{errors.username}</p>} 
+          {touched.email && errors.email && <p>{errors.email}</p>} 
           <Field
-            type="text"
-            name="username"
-            className="username"
-            placeholder="Username"
+            type="email"
+            name="email"
+            className="emailInput"
+            placeholder="email"
             // onChange={this.handleChange}
           /><br/>
         {touched.password && errors.password && <p>{errors.password}</p>} 
@@ -76,17 +76,17 @@ function LoginForm({errors, touched, Values}) {
 
     const FormikLoginForm = withFormik({
 
-        mapPropsToValues({ username, password }) {
+        mapPropsToValues({ email, password }) {
             return {
-               username: username || "",
+               email: email || "",
                password: password || ""  
             };
         },
         // validation schema
         validationSchema: Yup.object().shape({
             email: Yup.string()
-              .username("please enter a valid username")
-              .required("username is required"),
+              .email("please enter a valid Email")
+              .required("Email is required"),
             password: Yup.string()
               .min(6, "password must be 6 characters or longer")
               .required("Password is required")
@@ -94,7 +94,7 @@ function LoginForm({errors, touched, Values}) {
         // handle submit
         handleSubmit(values) {
               axios
-                .post("/api/auth/login", values)
+                .post("https://chef-portfolio-2.herokuapp.com/api/auth/login", values)
                 .then(res => {
                   console.log(values); // Data was created successfully and logs to console
                 })
