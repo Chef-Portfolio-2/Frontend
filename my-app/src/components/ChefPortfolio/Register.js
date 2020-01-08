@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {axiosWithAuth} from '../axiosAuthenticate/axiosWithAuth';
 import { Link }from 'react-router-dom';
 import './Register.css';
+import NavBarSignin from '../NavBars/NavBarSignin';
 const initialUser = {
   username: '',
   password: '',
@@ -48,6 +49,8 @@ class Register extends Component {
 
   render() {
     return (
+      <>
+      <NavBarSignin />
       <div className='registerPage'>
           <div>
         <form className= 'form' onSubmit={this.submitHandler}>
@@ -135,6 +138,7 @@ class Register extends Component {
         }
         </div>
       </div>
+      </>
     )
   }
 } 
