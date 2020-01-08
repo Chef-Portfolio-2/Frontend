@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import ReactDOM from "react-dom";
 import {BrowserRouter as Router, Route, Link} from "react-router-dom"
-import RecipePage from "./components/ChefPortfolio/RecipePage"
+import RecipeList from "./components/ChefPortfolio/RecipeList"
 import Home from "./components/Home"
 // import LoginForm from "./components/Login"
 
@@ -29,7 +29,7 @@ function App() {
         <Link to="/" className="nav-links">
           Home
         </Link>
-        <Link to="/recipepage/" className="nav-links">
+        <Link to="/recipelist/" className="nav-links">
           Recipes
         </Link>
         <Link to="/" className="nav-links">
@@ -42,7 +42,7 @@ function App() {
           Login
         </Link>
       </NavBar>
-      <Route path="/recipepage/" component={RecipePage} />
+      <Route path="/recipelist/" component={RecipeList} />
       <Route exact path="/" component={Home} />
       {/* <Route path = "/login/" component = { LoginForm} /> */}
       {/* will change ChefPortolioPage to Private Route later */}
