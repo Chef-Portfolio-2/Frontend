@@ -3,11 +3,12 @@ import ReactDOM from "react-dom";
 import {BrowserRouter as Router, Route, Link} from "react-router-dom"
 import RecipeList from "./components/ChefPortfolio/RecipeList"
 import Home from "./components/Home"
-// import LoginForm from "./components/Login"
+import LoginForm from "./components/Login";
+// import Register from "./components/Register";
 
 import './App.css';
 import ChefPortfolioPage from './components/ChefPortfolio/ChefPortfolioPage';
-import RegisterChef from './components/ChefPortfolio/Register.js';
+import Register from './components/ChefPortfolio/Register.js';
 import styled from "styled-components";
 
 const NavBar=styled.nav`
@@ -44,10 +45,11 @@ function App() {
       </NavBar>
       <Route path="/recipelist/" component={RecipeList} />
       <Route exact path="/" component={Home} />
-      {/* <Route path = "/login/" component = { LoginForm} /> */}
+      <Route path = "/login/" component={LoginForm} />
+      {/* <Route path = "/Register/" component={Register}/> */}
       {/* will change ChefPortolioPage to Private Route later */}
       <Route path="/chefportfolio/" component={ChefPortfolioPage} />
-      <Route path='/Register' component={RegisterChef} />
+      <Route path='/Register' component={Register} />
       
     </div>
   );
