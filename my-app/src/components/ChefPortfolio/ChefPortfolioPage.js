@@ -10,16 +10,16 @@ function ChefPortfolioPage() {
     //call on axios to get the chef's login info to populate here
     const [chef, setChef] = useState([]);
 
-    useEffect(() => {
-        axiosWithAuth()
-        .get('http://localhost:3000/recipes')
-        .then( res => {
-            setChef(res.data);
-        })
-        .catch(errors => {
-            console.log( 'The data was not returned', errors )
-        })
-    },);
+    // useEffect(() => {
+    //     axiosWithAuth()
+    //     .get('http://localhost:3000/recipes')
+    //     .then( res => {
+    //         setChef(res.data);
+    //     })
+    //     .catch(errors => {
+    //         console.log( 'The data was not returned', errors )
+    //     })
+    // },);
     
     // useEffect(() => {
     //     axiosWithAuth()
