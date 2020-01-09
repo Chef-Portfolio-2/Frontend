@@ -2,7 +2,6 @@ import React, { useState,useEffect } from 'react';
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import axios from 'axios';
 
 const Container = styled.div`
     display: flex; 
@@ -68,7 +67,8 @@ const CardDescription = styled.p`
 
 
 function RecipeList({recipes}) {
-
+    console.log("yo");
+console.log(recipes);
 
     return (
       <Container>
@@ -76,13 +76,13 @@ function RecipeList({recipes}) {
             
             return <Link to={`recipelist/${recipe.id}`}>
                         <Card>
-                        <CardImage src={recipe.image} />
+                        <CardImage src={recipe.photo} />
                         <CardTitle>{recipe.title}</CardTitle>
                         <CardAuthorAndType>
-                            <CardAuthor>{recipe.author}</CardAuthor>
-                            <CardType>{recipe.type}</CardType>
+                            <CardAuthor>{recipe.chef_name}</CardAuthor>
+                            <CardType>{recipe.meal_type}</CardType>
                         </CardAuthorAndType>
-                        <CardDescription>{recipe.description}</CardDescription>
+                        <CardDescription>{recipe.instructions}</CardDescription>
                     </Card>
                 </Link>
         })}
