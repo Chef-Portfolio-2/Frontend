@@ -33,7 +33,7 @@ function App() {
 
   useEffect(() => {
       axios
-      .get('http://localhost:3000/recipes')
+      .get('https://chef-portfolio-2.herokuapp.com/api/posts/')
       .then( res => {
           setRecipes(res.data);
           console.log(res);
