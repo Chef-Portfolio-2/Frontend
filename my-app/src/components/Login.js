@@ -139,7 +139,7 @@ function LoginForm({errors, touched, Values}) {
                 .then(res => {
                   console.log(values); // Data was created successfully and logs to console
                   localStorage.setItem('token', res.data.payload);
-                  props.history.push('/');
+                  props.history.push('/chefportfolio');
                   resetForm();
                   setSubmitting(false);
                   
