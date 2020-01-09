@@ -1,11 +1,14 @@
-import React, {useState} from 'react';
+
+import React, {useState, useEffect} from 'react';
 import ReactDOM from "react-dom";
 import {BrowserRouter as Router, Route, Link} from "react-router-dom"
 import RecipeList from "./components/ChefPortfolio/RecipeList"
 import Home from "./components/Home"
 import LoginForm from "./components/Login";
+import axios from 'axios';
+import RecipePage from "./components/ChefPortfolio/RecipePage"
 // import Register from "./components/Register";
-
+import PrivateRoute from './components/axiosAuthenticate/PrivateRoute';
 import './App.css';
 import ChefPortfolioPage from './components/ChefPortfolio/ChefPortfolioPage';
 import Register from './components/ChefPortfolio/Register.js';
@@ -24,33 +27,53 @@ const NavBar=styled.nav`
 
 
 function App() {
+
+  const [recipes, setRecipes] = useState([]);
+
+
+  useEffect(() => {
+      axios
+      .get('http://localhost:3000/recipes')
+      .then( res => {
+          setRecipes(res.data);
+          console.log(res);
+      })
+      .catch(errors => {
+          console.log( 'The data was not returned', errors )
+      })
+  },[]);
+
+
   return (
     <div>
-      <NavBar>
-        <Link to="/" className="nav-links">
-          Home
-        </Link>
-        <Link to="/recipelist/" className="nav-links">
-          Recipes
-        </Link>
-        <Link to="/" className="nav-links">
-          <span className="home-link">Chow</span>
-        </Link>
-        <Link to="/chefportfolio" className="nav-links">
-          Portfolio
-        </Link>
-        <Link to="/login" className="nav-links">
-          Login
-        </Link>
-      </NavBar>
-      <Route path="/recipelist/" component={RecipeList} />
-      <Route exact path="/" component={Home} />
-      <Route path = "/login/" component={LoginForm} />
-      {/* <Route path = "/Register/" component={Register}/> */}
-      {/* will change ChefPortolioPage to Private Route later */}
-      <Route path="/chefportfolio/" component={ChefPortfolioPage} />
-      <Route path='/Register' component={Register} />
+
+      <Route
+        exact
+        path="/recipelist"
+        render={routeProps => {
+          return <RecipeList {...routeProps} recipes={recipes} />;
+        }}
+      />
+      <Route
+        path="/recipelist/:id"
+        render={routeProps => {
+          return <RecipePage {...routeProps} recipes={recipes} />;
+        }}/>
       
+
+      <Router>
+        <Switch>
+        <Route path="/recipepage/" component={RecipePage} />
+        <PrivateRoute exact path="/" component={Home} />
+        <Route path = "/login/" component={LoginForm} />
+        {/* <Route path = "/Register/" component={Register}/> */}
+        {/* will change ChefPortolioPage to Private Route later */}
+        <Route path="/chefportfolio/" component={ChefPortfolioPage} />
+        <Route path='/Register' component={Register} />
+        </Switch>
+      </Router>
+
+
     </div>
   );
 }

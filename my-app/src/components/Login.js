@@ -1,9 +1,8 @@
   
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import styled from "styled-components";
-import {Redirect} from 'react-router-dom';
 import './Login.css';
 import {axiosWithAuth} from './axiosAuthenticate/axiosWithAuth';
 import { Link } from 'react-router-dom';
