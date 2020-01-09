@@ -18,7 +18,7 @@ const NavBarSignin = () =>{
             <a href="https://elated-meninsky-14c15a.netlify.com/" className="nav-links">
                 Home
             </a>
-            <Link to="/recipepage/" className="nav-links">
+            <Link to="/recipelist" className="nav-links">
                 Recipes
             </Link>
             <Link to="/" className="nav-links">

@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import NavBarSignin from '../NavBars/NavBarSignin';
 
 const Container = styled.div`
     display: flex; 
@@ -77,6 +78,8 @@ function RecipeList({recipes}) {
 console.log(recipes);
 
     return (
+        <>
+        <NavBarSignin />
       <Container>
         {recipes.map(recipe => {
             
@@ -93,6 +96,7 @@ console.log(recipes);
                 </StyledLink>
         })}
       </Container>
+      </>
     );
 }
 

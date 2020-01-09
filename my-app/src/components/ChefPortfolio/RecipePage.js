@@ -79,30 +79,16 @@ console.log(recipe);
           />
           <RecipeHeader>
             <RecipeInfo>
-              <RecipeTitle>Blah</RecipeTitle>
-              <RecipeAuthor>Jeff Breig</RecipeAuthor>
+              <RecipeTitle>{recipe.title}</RecipeTitle>
+              <RecipeAuthor>{recipe.chef_name}</RecipeAuthor>
             </RecipeInfo>
             <RecipeTags>
-              <RecipeTag>Ice Cream</RecipeTag>
+              <RecipeTag>{recipe.meal_type}</RecipeTag>
             </RecipeTags>
           </RecipeHeader>
           <RecipeContent>
-            We'll make some happy little bushes here. Everyone is going to see
-            things differently - and that's the way it should be. Put it in, leave
-            it alone. Just take out whatever you don't want. It'll change your
-            entire perspective. It's a very cold picture, I may have to go get my
-            coat. It’s about to freeze me to death. That easy.
-            <br />
-            <br />
-            Let's get wild today. If you've been in Alaska less than a year you're
-            a Cheechako. You can do anything here. So don't worry about it. It's
-            amazing what you can do with a little love in your heart. These little
-            son of a guns hide in your brush and you just have to push them out.
-            It is a lot of fun.
-            <br />
-            <br />I get carried away with this brush cleaning. Use your
-            imagination, let it go. Don't forget to tell these special people in
-            your life just how special they are to you.
+            {recipe.ingredients}
+            {recipe.instructions}
           </RecipeContent>
         </Container>
       </>
