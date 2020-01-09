@@ -134,7 +134,7 @@ function LoginForm({errors, touched, Values}) {
               .required("Password is required")
           }),
         // handle submit
-        handleSubmit (values, {props, resetForm, setSubmitting}) {
+        handleSubmit (values, {props, resetForm}) {
               axiosWithAuth()
                 .post("https://chef-portfolio-2.herokuapp.com/api/auth/login", values)
                 .then(res => {
@@ -142,12 +142,12 @@ function LoginForm({errors, touched, Values}) {
                   localStorage.setItem('token', res.data.payload);
                   props.history.push('/chefportfolio');
                   resetForm();
-                  setSubmitting(false);
+                  
                   
                 })
                 .catch(err => {
                   console.log(err); // There was an error creating the data and logs to console
-                  setSubmitting(false);
+                  
                 });
             }
         // axios post here
