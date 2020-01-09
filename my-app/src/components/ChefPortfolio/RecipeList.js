@@ -1,13 +1,11 @@
 import React, { useState,useEffect } from 'react';
-import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
     display: flex; 
-    flex-wrap: wrap;
     justify-content: space-around;
-    width: 50%;
+    width: 75%;
     margin: 5vh auto;
     align-items: center;
 `;
@@ -65,6 +63,14 @@ const CardDescription = styled.p`
 
 `
 
+const StyledLink = styled(Link)`
+    text-decoration: none;
+
+    &:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+    }
+`;
+
 
 function RecipeList({recipes}) {
     console.log("yo");
@@ -74,17 +80,17 @@ console.log(recipes);
       <Container>
         {recipes.map(recipe => {
             
-            return <Link to={`recipelist/${recipe.id}`}>
-                        <Card>
+            return <StyledLink to={`recipelist/${recipe.id}`}>
+                        <Card key={recipe.id}>
                         <CardImage src={recipe.photo} />
                         <CardTitle>{recipe.title}</CardTitle>
                         <CardAuthorAndType>
                             <CardAuthor>{recipe.chef_name}</CardAuthor>
                             <CardType>{recipe.meal_type}</CardType>
                         </CardAuthorAndType>
-                        <CardDescription>{recipe.instructions}</CardDescription>
+                        <CardDescription></CardDescription>
                     </Card>
-                </Link>
+                </StyledLink>
         })}
       </Container>
     );
