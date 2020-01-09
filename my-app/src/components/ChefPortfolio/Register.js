@@ -93,6 +93,7 @@ import NavBarSignin from '../NavBars/NavBarSignin';
             id='first_name'
             name='first_name'
             placeholder='First Name'
+            autoComplete ='first_name'
             // value={this.state.user.first_name}
             onChange={handleChanges}
           />
@@ -103,6 +104,7 @@ import NavBarSignin from '../NavBars/NavBarSignin';
             id='last_name'
             name='last_name'
             placeholder='Last Name'
+            autoComplete ='last_name'
             // value={this.state.user.last_name}
             onChange={handleChanges}
           />
@@ -113,6 +115,7 @@ import NavBarSignin from '../NavBars/NavBarSignin';
             id='username'
             name='username'
             placeholder='Username'
+            autocomplete ="username"
             // value={this.state.user.username}
             onChange={handleChanges}
           />
@@ -123,6 +126,7 @@ import NavBarSignin from '../NavBars/NavBarSignin';
             id='password'
             name='password'
             placeholder='Password'
+            autocomplete ="new-password"
             // value={this.state.user.password}
             onChange={handleChanges}
           />
@@ -132,7 +136,7 @@ import NavBarSignin from '../NavBars/NavBarSignin';
             type="text"
             id="email"
             name="email"
-            placeholder="Email"
+            placeholder="Email" 
             // value={this.state.user.email}
             onChange={handleChanges}
           />
