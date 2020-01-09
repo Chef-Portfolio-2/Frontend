@@ -1,12 +1,12 @@
   
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import styled from "styled-components";
 import {Redirect} from 'react-router-dom';
 import './Login.css';
-import NavBarSignin from '../components/NavBars/NavBarSignin';
 import {axiosWithAuth} from './axiosAuthenticate/axiosWithAuth';
+import { Link } from 'react-router-dom';
 
 // styles
 
@@ -71,11 +71,11 @@ margin-left: 40%;
 
 function LoginForm({errors, touched, Values}) {
 
+ 
     return (
         <>
-        <NavBarSignin />
       <Container className="container">
-        <Form
+        <Form 
           // onSubmit={this.handleSubmit}
           className="login"
         >
@@ -104,10 +104,13 @@ function LoginForm({errors, touched, Values}) {
           <Button 
             className="Submit"
             type="submit"
+            
           >
             Login!
           </Button>
+          <Link to="/register" className="newsUser">New User? Register Here!</Link>
         </Form>
+      
 
       </Container>
       </>
@@ -131,16 +134,20 @@ function LoginForm({errors, touched, Values}) {
               .required("Password is required")
           }),
         // handle submit
-        handleSubmit(values){
+        handleSubmit (values, {props, resetForm, setSubmitting}) {
               axiosWithAuth()
                 .post("https://chef-portfolio-2.herokuapp.com/api/auth/login", values)
                 .then(res => {
                   console.log(values); // Data was created successfully and logs to console
-                  localStorage.setItem('token', res.data.payload)
-                  this.props.history.push('/');
+                  localStorage.setItem('token', res.data.payload);
+                  props.history.push('/chefportfolio');
+                  resetForm();
+                  setSubmitting(false);
+                  
                 })
                 .catch(err => {
                   console.log(err); // There was an error creating the data and logs to console
+                  setSubmitting(false);
                 });
             }
         // axios post here
