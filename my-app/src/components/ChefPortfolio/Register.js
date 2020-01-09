@@ -115,7 +115,7 @@ import NavBarSignin from '../NavBars/NavBarSignin';
             id='username'
             name='username'
             placeholder='Username'
-            autocomplete ="username"
+            autoComplete ="username"
             // value={this.state.user.username}
             onChange={handleChanges}
           />
@@ -126,7 +126,7 @@ import NavBarSignin from '../NavBars/NavBarSignin';
             id='password'
             name='password'
             placeholder='Password'
-            autocomplete ="new-password"
+            autoComplete ="new-password"
             // value={this.state.user.password}
             onChange={handleChanges}
           />

@@ -89,7 +89,7 @@ function LoginForm({errors, touched, Values}) {
             name="username"
             className="emailInput"
             placeholder="Username"
-            autocomplete="username"
+            autoComplete="username"
             // onChange={this.handleChange}
           /></Email><br/>
           <Password>
@@ -99,7 +99,7 @@ function LoginForm({errors, touched, Values}) {
             name="password"
             className="pwInput"
             placeholder="Password"
-            autocomplete="current-password"
+            autoComplete="current-password"
             // onChange={this.handleChange}
           /></Password><br/>
           <Button 
