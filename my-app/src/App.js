@@ -1,7 +1,7 @@
 
 import React, {useState, useEffect} from 'react';
 import ReactDOM from "react-dom";
-import {BrowserRouter as Router, Route, Link} from "react-router-dom"
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom"
 import RecipeList from "./components/ChefPortfolio/RecipeList"
 import Home from "./components/Home"
 import LoginForm from "./components/Login";
@@ -33,7 +33,7 @@ function App() {
 
   useEffect(() => {
       axios
-      .get('http://localhost:3000/recipes')
+      .get('https://chef-portfolio-2.herokuapp.com/api/posts')
       .then( res => {
           setRecipes(res.data);
           console.log(res);

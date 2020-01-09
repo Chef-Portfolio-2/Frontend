@@ -23,7 +23,7 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
     const saveEdit = e => {
         e.preventDefault();
         axiosWithAuth()
-        .put(`http://localhost:3000/recipes/${recipeToEdit}`, recipeToEdit)
+        .put(`https://chef-portfolio-2.herokuapp.com/api/posts/${recipeToEdit}`, recipeToEdit)
         .then(res => {
             setEditing(false)
         })
@@ -31,7 +31,7 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
 
     const deleteRecipe = recipe => {
         axios
-        .delete(`http://localhost:3000/recipes/${recipe.id}`)
+        .delete(`https://chef-portfolio-2.herokuapp.com/api/posts${recipe.id}`)
         .then(res => console.log(res))
         .catch(err => console.log(err))
     };
@@ -45,13 +45,16 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
                     <div width ='400' className='recipeList' key={chef.id}>
                         <img width='350'
                             className ='recipeImg'
-                            src = {chef.image}
+                            src = {chef.photo}
                             alt = {chef.title}
                         />
                         <div className='typeContainer'>
-                            <h5 className='typeName'> {chef.type}</h5>
+                            <h5 className='typeName'> {chef.meal_type}</h5>
                         </div>
                             <h4> {chef.title}</h4>
+                            <div className='instructions'>
+                                <p> {chef.instructions}</p>
+                            </div>
                             <div className='buttonContainer'>
                                 {/* <button className ='editButton' onClick={() => editRecipe(chef)}> Edit</button> */}
                                 <EditModal />
