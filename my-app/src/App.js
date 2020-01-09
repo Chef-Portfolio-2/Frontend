@@ -1,6 +1,8 @@
+
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import RecipePage from "./components/ChefPortfolio/RecipePage"
+
 import Home from "./components/Home"
 import LoginForm from "./components/Login";
 import PrivateRoute from './components/axiosAuthenticate/PrivateRoute';
@@ -35,6 +37,7 @@ function App() {
         <Route path='/Register' component={Register} />
         </Switch>
       </Router>
+
     </div>
   );
 }
