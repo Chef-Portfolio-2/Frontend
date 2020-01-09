@@ -66,7 +66,7 @@ class Register extends Component {
             </div>
           </section>
 
-          {/* <input
+          <input
             className='Register-Input'
             type='text'
             id='firstname'
@@ -84,7 +84,7 @@ class Register extends Component {
             placeholder='Last Name'
             value={this.state.user.lastname}
             onChange={this.inputHandler}
-          /> */}
+          />
 
           <input
             className='Register-Input'

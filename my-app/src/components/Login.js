@@ -1,11 +1,12 @@
   
-import React from 'react';
+import React, {useState} from 'react';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import styled from "styled-components";
-import axios from "axios";
+import {Redirect} from 'react-router-dom';
 import './Login.css';
 import NavBarSignin from '../components/NavBars/NavBarSignin';
+import {axiosWithAuth} from './axiosAuthenticate/axiosWithAuth';
 
 // styles
 
@@ -74,7 +75,7 @@ function LoginForm({errors, touched, Values}) {
         <>
       <Container className="container">
         <Form
-        //   onSubmit={this.handleSubmit}
+          // onSubmit={this.handleSubmit}
           className="login"
         >
           
@@ -82,12 +83,12 @@ function LoginForm({errors, touched, Values}) {
             Welcome back! Please sign in.
           </Welcome>
           <Email>
-          {touched.email && errors.email && <p className = "text">{errors.email}</p>}
+          {touched.username && errors.username && <p className = "text">{errors.username}</p>}
           <Field
-            type="email"
-            name="email"
+            type="text"
+            name="username"
             className="emailInput"
-            placeholder="email"
+            placeholder="Username"
             // onChange={this.handleChange}
           /></Email><br/>
           <Password>
@@ -114,27 +115,28 @@ function LoginForm({errors, touched, Values}) {
 
     const FormikLoginForm = withFormik({
 
-        mapPropsToValues({ email, password }) {
+        mapPropsToValues({ username, password }) {
             return {
-               email: email || "",
+               username: username || "",
                password: password || ""  
             };
         },
         // validation schema
         validationSchema: Yup.object().shape({
-            email: Yup.string()
-              .email("please enter a valid Email")
-              .required("Email is required"),
+            username: Yup.string()
+              .required("Username is required"),
             password: Yup.string()
-              .min(6, "password must be 6 characters or longer")
+              .min(3, "password must be 6 characters or longer")
               .required("Password is required")
           }),
         // handle submit
-        handleSubmit(values) {
-              axios
+        handleSubmit(values){
+              axiosWithAuth()
                 .post("https://chef-portfolio-2.herokuapp.com/api/auth/login", values)
                 .then(res => {
                   console.log(values); // Data was created successfully and logs to console
+                  localStorage.setItem('token', res.data.payload)
+                  this.props.history.push('/');
                 })
                 .catch(err => {
                   console.log(err); // There was an error creating the data and logs to console
