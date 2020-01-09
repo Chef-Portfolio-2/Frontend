@@ -1,11 +1,9 @@
-import React, {useState} from 'react';
-import ReactDOM from "react-dom";
-import {BrowserRouter as Router, Route, Link} from "react-router-dom"
+import React from 'react';
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import RecipePage from "./components/ChefPortfolio/RecipePage"
 import Home from "./components/Home"
 import LoginForm from "./components/Login";
-// import Register from "./components/Register";
-
+import PrivateRoute from './components/axiosAuthenticate/PrivateRoute';
 import './App.css';
 import ChefPortfolioPage from './components/ChefPortfolio/ChefPortfolioPage';
 import Register from './components/ChefPortfolio/Register.js';
@@ -26,14 +24,17 @@ const NavBar=styled.nav`
 function App() {
   return (
     <div>
-      <Route path="/recipepage/" component={RecipePage} />
-      <Route exact path="/" component={Home} />
-      <Route path = "/login/" component={LoginForm} />
-      {/* <Route path = "/Register/" component={Register}/> */}
-      {/* will change ChefPortolioPage to Private Route later */}
-      <Route path="/chefportfolio/" component={ChefPortfolioPage} />
-      <Route path='/Register' component={Register} />
-      
+      <Router>
+        <Switch>
+        <Route path="/recipepage/" component={RecipePage} />
+        <PrivateRoute exact path="/" component={Home} />
+        <Route path = "/login/" component={LoginForm} />
+        {/* <Route path = "/Register/" component={Register}/> */}
+        {/* will change ChefPortolioPage to Private Route later */}
+        <Route path="/chefportfolio/" component={ChefPortfolioPage} />
+        <Route path='/Register' component={Register} />
+        </Switch>
+      </Router>
     </div>
   );
 }
