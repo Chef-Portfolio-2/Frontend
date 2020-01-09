@@ -72,7 +72,6 @@ function LoginForm({errors, touched, Values}) {
 
     return (
         <>
-        <NavBarSignin />
       <Container className="container">
         <Form
         //   onSubmit={this.handleSubmit}
