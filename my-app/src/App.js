@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ReactDOM from "react-dom";
 import {BrowserRouter as Router, Route, Link} from "react-router-dom"
 import RecipeList from "./components/ChefPortfolio/RecipeList"
 import Home from "./components/Home"
 import LoginForm from "./components/Login";
+import axios from 'axios';
+import RecipePage from "./components/ChefPortfolio/RecipePage"
 // import Register from "./components/Register";
 
 import './App.css';
@@ -24,6 +26,23 @@ const NavBar=styled.nav`
 
 
 function App() {
+
+  const [recipes, setRecipes] = useState([]);
+
+
+  useEffect(() => {
+      axios
+      .get('http://localhost:3000/recipes')
+      .then( res => {
+          setRecipes(res.data);
+          console.log(res);
+      })
+      .catch(errors => {
+          console.log( 'The data was not returned', errors )
+      })
+  },[]);
+
+
   return (
     <div>
       <NavBar>
@@ -43,7 +62,18 @@ function App() {
           Login
         </Link>
       </NavBar>
-      <Route path="/recipelist/" component={RecipeList} />
+      <Route
+        exact
+        path="/recipelist"
+        render={routeProps => {
+          return <RecipeList {...routeProps} recipes={recipes} />;
+        }}
+      />
+      <Route
+        path="/recipelist/:id"
+        render={routeProps => {
+          return <RecipePage {...routeProps} recipes={recipes} />;
+        }}/>
       <Route exact path="/" component={Home} />
       <Route path = "/login/" component={LoginForm} />
       {/* <Route path = "/Register/" component={Register}/> */}

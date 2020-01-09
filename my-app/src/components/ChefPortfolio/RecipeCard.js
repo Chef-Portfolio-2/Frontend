@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
 const Card = styled.div`
@@ -59,16 +60,16 @@ const CardDescription = styled.p`
 const RecipeCard = ({recipe}) => {
 
     return (
-        <Card>
-            <CardImage src={recipe.image} />
-            <CardTitle>{recipe.title}</CardTitle>
-            <CardAuthorAndType>
-                <CardAuthor>{recipe.author}</CardAuthor>
-                <CardType>{recipe.type}</CardType>
-            </CardAuthorAndType>
-            <CardDescription>{recipe.description}</CardDescription>
         
-        </Card>
+            <Card>
+                <CardImage src={recipe.image} />
+                <CardTitle>{recipe.title}</CardTitle>
+                <CardAuthorAndType>
+                    <CardAuthor>{recipe.author}</CardAuthor>
+                    <CardType>{recipe.type}</CardType>
+                </CardAuthorAndType>
+                <CardDescription>{recipe.description}</CardDescription>
+            </Card>
     )
 
 }

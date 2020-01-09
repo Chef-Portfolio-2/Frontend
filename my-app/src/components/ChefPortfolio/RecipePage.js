@@ -60,8 +60,16 @@ const RecipeTag = styled.div`
 `;
 
 
-function RecipePage() {
-    return (
+function RecipePage({recipes, match}) {
+const paramRecipeId = match.params.id;
+console.log(recipes);
+console.log(match);
+console.log(paramRecipeId);
+const recipeResults = recipes.filter(recipe => recipe.id === Number(paramRecipeId));
+const recipe = recipeResults[0];
+console.log(recipe);
+
+  return (
       <>
         <NavBarSignin />
         <Container>
@@ -71,13 +79,11 @@ function RecipePage() {
           />
           <RecipeHeader>
             <RecipeInfo>
-              <RecipeTitle>Fancy Sundae Thing</RecipeTitle>
+              <RecipeTitle>Blah</RecipeTitle>
               <RecipeAuthor>Jeff Breig</RecipeAuthor>
             </RecipeInfo>
             <RecipeTags>
               <RecipeTag>Ice Cream</RecipeTag>
-              <RecipeTag>Dairy</RecipeTag>
-              <RecipeTag>Nuts</RecipeTag>
             </RecipeTags>
           </RecipeHeader>
           <RecipeContent>
