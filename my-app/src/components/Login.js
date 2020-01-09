@@ -1,9 +1,9 @@
   
-import React from 'react';
+import React, {useState} from 'react';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import styled from "styled-components";
-import axios from "axios";
+import {Redirect} from 'react-router-dom';
 import './Login.css';
 import NavBarSignin from '../components/NavBars/NavBarSignin';
 import {axiosWithAuth} from './axiosAuthenticate/axiosWithAuth';
@@ -76,7 +76,7 @@ function LoginForm({errors, touched, Values}) {
         <NavBarSignin />
       <Container className="container">
         <Form
-        //   onSubmit={this.handleSubmit}
+          // onSubmit={this.handleSubmit}
           className="login"
         >
           
@@ -131,11 +131,13 @@ function LoginForm({errors, touched, Values}) {
               .required("Password is required")
           }),
         // handle submit
-        handleSubmit(values) {
-              axios
+        handleSubmit(values){
+              axiosWithAuth()
                 .post("https://chef-portfolio-2.herokuapp.com/api/auth/login", values)
                 .then(res => {
                   console.log(values); // Data was created successfully and logs to console
+                  localStorage.setItem('token', res.data.payload)
+                  this.props.history.push('/');
                 })
                 .catch(err => {
                   console.log(err); // There was an error creating the data and logs to console
