@@ -90,6 +90,7 @@ function LoginForm({errors, touched, Values}) {
             name="username"
             className="emailInput"
             placeholder="Username"
+            autoComplete="username"
             // onChange={this.handleChange}
           /></Email><br/>
           <Password>
@@ -99,6 +100,7 @@ function LoginForm({errors, touched, Values}) {
             name="password"
             className="pwInput"
             placeholder="Password"
+            autoComplete="current-password"
             // onChange={this.handleChange}
           /></Password><br/>
           <Button 
@@ -134,16 +136,15 @@ function LoginForm({errors, touched, Values}) {
               .required("Password is required")
           }),
         // handle submit
-        
-      
-        handleSubmit (values, {props, resetForm}) {
-
-            
+        handleSubmit (values, {props, resetForm, setSubmitting}) {
+          
               axiosWithAuth()
                 .post("https://chef-portfolio-2.herokuapp.com/api/auth/login", values)
                 .then(res => {
-                  console.log(values); // Data was created successfully and logs to console
-                  localStorage.setItem('token', res.data.payload);
+                  console.log(values);
+                  console.log(res) // Data was created successfully and logs to console
+                  localStorage.setItem('token', res.data.token);
+                  localStorage.setItem('chef_id', res.data.id);
                   props.history.push('/chefportfolio');
                   resetForm();
                 

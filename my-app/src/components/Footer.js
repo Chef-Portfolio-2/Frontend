@@ -5,12 +5,13 @@ import {Link} from 'react-router-dom';
 const Ul = styled.ul`
 display: flex;
 flex-direction: row;
-align-content: center;
+align-items: center;
 justify-content: space-around;
 
 `
 const Container = styled.footer`
 background: #32b672; 
+height: 8%;
 `
 
 
