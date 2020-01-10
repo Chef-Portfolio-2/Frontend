@@ -65,8 +65,9 @@ const Button = styled.button`
 const Body = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: space-between;
-height: 100vh;
+justify-content: space-evenly;
+
+border: 1px solid red;
 `
 
 function ContactForm({ errors, touched, Values }) {
