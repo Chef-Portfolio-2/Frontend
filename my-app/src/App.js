@@ -1,7 +1,8 @@
 
 import React, {useState, useEffect} from 'react';
 import ReactDOM from "react-dom";
-import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom"
+
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom"
 import RecipeList from "./components/ChefPortfolio/RecipeList"
 import Home from "./components/Home"
 import LoginForm from "./components/Login";
@@ -26,6 +27,7 @@ function App() {
   useEffect(() => {
       axios
       .get('https://chef-portfolio-2.herokuapp.com/api/posts/')
+
       .then( res => {
           setRecipes(res.data);
           console.log(res);
@@ -37,33 +39,32 @@ function App() {
 
 
   return (
+  <Router>
     <div>
-      <Router>
-        <Switch>
-          <Route path="/recipepage/" component={RecipePage} />
-          <PrivateRoute exact path="/" component={Home} />
-          <Route path="/login/" component={LoginForm} />
-          {/* <Route path = "/Register/" component={Register}/> */}
-          {/* will change ChefPortolioPage to Private Route later */}
-          <Route path="/chefportfolio/" component={ChefPortfolioPage} />
-          <Route path="/Register" component={Register} />
-          <Route path="/contact" component={ContactForm} />
-          <Route
-            exact
-            path="/recipelist"
-            render={routeProps => {
-              return <RecipeList {...routeProps} recipes={recipes} />;
-            }}
-          />
-          <Route
-            path="/recipelist/:id"
-            render={routeProps => {
-              return <RecipePage {...routeProps} recipes={recipes} />;
-            }}
-          />
+    <Switch>       
+      <PrivateRoute path="/chefportfolio" component={ChefPortfolioPage} /> 
+      <PrivateRoute exact path="/" component={Home} />
+     
+      <Route path = "/login" component={LoginForm} />
+      <Route path="/recipepage" component={RecipePage} />
+      <Route path='/Register' component={Register} /><Route
+        exact
+        path="/recipelist"
+        render={routeProps => {
+          return <RecipeList {...routeProps} recipes={recipes} />;
+        }}
+      />
+      <Route
+        path="/recipelist/:id"
+        render={routeProps => {
+          return <RecipePage {...routeProps} recipes={recipes} />;
+        }}/>
         </Switch>
-      </Router>
+      
+
+
     </div>
+  </Router>
   );
 }
 
