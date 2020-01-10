@@ -11,13 +11,18 @@
 .emailInput, .nameInput, .messageInput {
     border: 2px solid black;
     width: 40%;
-    
+
 
     
 }
 
+.contact{
+    display: flex; 
+    flex-direction: column;
+    border: 1px solid red;
+    justify-content: space-around;
+}
 
-.newUser {
-    text-decoration: none;
-    color: black;
+.submit{
+    
 }

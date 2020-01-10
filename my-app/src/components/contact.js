@@ -17,12 +17,11 @@ const Container = styled.div`
   margin-left: 35%;
   margin-right: 35%;
   margin-bottom: 25%;
-  height: 600px;
+  height: 50vh;
   width: 100%;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   background: linear-gradient(to bottom, #4ee677 5%, #32b672 100%);
-  padding-top: 10%;
 `;
 
 const Welcome = styled.h1`
@@ -60,68 +59,72 @@ const Button = styled.button`
   padding: 7px 25px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #32b675;
-  margin-bottom: 10%;
-  margin-right: 50%;
-  margin-left: 40%;
+  margin: auto;
 `;
+
+const Body = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 100vh;
+`
 
 function ContactForm({ errors, touched, Values }) {
   return (
     <>
-      <NavBarSignin />
-      <Container className="container">
-        <Form
-          // onSubmit={this.handleSubmit}
-          className="login"
-        >
-          <Welcome className="Welcome">
-            Questions? Concerns? Get in touch.
-          </Welcome>
-          <Name>
-            {touched.name && errors.name && (
-              <p className="text">{errors.name}</p>
-            )}
-            <Field
-              type="text"
-              name="name"
-              className="nameInput"
-              placeholder="What's your name?"
-              // onChange={this.handleChange}
-            />
-          </Name>
-          <Email>
-            {touched.email && errors.email && (
-              <p className="text">{errors.email}</p>
-            )}
-            <Field
-              type="email"
-              name="email"
-              className="emailInput"
-              placeholder="What's your email?"
-              // onChange={this.handleChange}
-            />
-          </Email>
-          <Message>
-            {touched.message && errors.message && (
-              <p className="text">{errors.message}</p>
-            )}
-            <Field
-              component="textarea"
-              name="message"
-              className="messageInput"
-              placeholder="What's on your mind?"
-              // onChange={this.handleChange}
-            />
-          </Message>
-          <Button className="Submit" type="submit">
-            Submit
-          </Button>
-          <Link to="/register" className="newsUser">
-            New User? Register Here!
-          </Link>
-        </Form>
-      </Container>
-      <Footer />
+      <Body>
+        <NavBarSignin />
+        <Container className="container">
+          <Form
+            // onSubmit={this.handleSubmit}
+            className="contact"
+          >
+            <Welcome className="Welcome">
+              Questions? Concerns? Get in touch.
+            </Welcome>
+            <Name>
+              {touched.name && errors.name && (
+                <p className="text">{errors.name}</p>
+              )}
+              <Field
+                type="text"
+                name="name"
+                className="nameInput"
+                placeholder="What's your name?"
+                // onChange={this.handleChange}
+              />
+            </Name>
+            <Email>
+              {touched.email && errors.email && (
+                <p className="text">{errors.email}</p>
+              )}
+              <Field
+                type="email"
+                name="email"
+                className="emailInput"
+                placeholder="What's your email?"
+                // onChange={this.handleChange}
+              />
+            </Email>
+            <Message>
+              {touched.message && errors.message && (
+                <p className="text">{errors.message}</p>
+              )}
+              <Field
+                component="textarea"
+                name="message"
+                className="messageInput"
+                placeholder="What's on your mind?"
+                // onChange={this.handleChange}
+              />
+            </Message>
+            <Button className="submit" type="submit">
+              Submit
+            </Button>
+          </Form>
+        </Container>
+        <Footer />
+      </Body>
     </>
   );
 }

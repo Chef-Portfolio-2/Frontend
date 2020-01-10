@@ -15,15 +15,6 @@ import Register from './components/ChefPortfolio/Register.js';
 import styled from "styled-components";
 import ContactForm from "./components/contact";
 
-const NavBar=styled.nav`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 70%;
-  margin: auto;
-
-`
-
 
 
 

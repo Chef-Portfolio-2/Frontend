@@ -7,7 +7,7 @@ const NavBar=styled.nav`
   justify-content: space-around;
   align-items: center;
   width: 70%;
-  margin: auto;
+  margin: 0 auto;
 
 `
 
