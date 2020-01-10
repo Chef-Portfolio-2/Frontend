@@ -76,7 +76,7 @@ const Body = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-`;
+`
 
 
 function RecipeList({recipes}) {
@@ -103,8 +103,9 @@ console.log(recipes);
               );
             })}
           </Container>
-          <Footer />
+          
         </Body>
+        <Footer />
       </>
     );
 }
