@@ -22,7 +22,7 @@ const EditModal = ({recipes}) => {
     const saveEdit = e => {
         e.preventDefault();
         axiosWithAuth()
-        .put(`http://localhost:3000/recipes/${recipeToEdit}`, recipeToEdit)
+        .put(`https://chef-portfolio-2.herokuapp.com/api/posts/${recipeToEdit}`, recipeToEdit)
         .then(res => {
             setEditing(false)
         })
