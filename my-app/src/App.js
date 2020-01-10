@@ -45,9 +45,15 @@ function App() {
 
 
   return (
+  <Router>
     <div>
-
-      <Route
+    <Switch>       
+      <PrivateRoute path="/chefportfolio" component={ChefPortfolioPage} /> 
+      <PrivateRoute exact path="/" component={Home} />
+     
+      <Route path = "/login" component={LoginForm} />
+      <Route path="/recipepage" component={RecipePage} />
+      <Route path='/Register' component={Register} /><Route
         exact
         path="/recipelist"
         render={routeProps => {
@@ -59,22 +65,12 @@ function App() {
         render={routeProps => {
           return <RecipePage {...routeProps} recipes={recipes} />;
         }}/>
-      
-
-      <Router>
-        <Switch>
-        <Route path="/recipepage/" component={RecipePage} />
-        <PrivateRoute exact path="/" component={Home} />
-        <Route path = "/login/" component={LoginForm} />
-        {/* <Route path = "/Register/" component={Register}/> */}
-        {/* will change ChefPortolioPage to Private Route later */}
-        <Route path="/chefportfolio/" component={ChefPortfolioPage} />
-        <Route path='/Register' component={Register} />
         </Switch>
-      </Router>
+      
 
 
     </div>
+  </Router>
   );
 }
 
