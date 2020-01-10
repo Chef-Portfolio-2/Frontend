@@ -1,6 +1,7 @@
 
 import React, {useState, useEffect} from 'react';
 import ReactDOM from "react-dom";
+
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom"
 import RecipeList from "./components/ChefPortfolio/RecipeList"
 import Home from "./components/Home"
@@ -13,15 +14,7 @@ import './App.css';
 import ChefPortfolioPage from './components/ChefPortfolio/ChefPortfolioPage';
 import Register from './components/ChefPortfolio/Register.js';
 import styled from "styled-components";
-
-const NavBar=styled.nav`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 70%;
-  margin: auto;
-
-`
+import ContactForm from "./components/contact";
 
 
 
