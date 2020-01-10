@@ -52,9 +52,6 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
                             <h5 className='typeName'> {chef.meal_type}</h5>
                         </div>
                             <h4> {chef.title}</h4>
-                            <div className='instructions'>
-                                <p> {chef.instructions}</p>
-                            </div>
                             <div className='buttonContainer'>
                                 {/* <button className ='editButton' onClick={() => editRecipe(chef)}> Edit</button> */}
                                 <EditModal />

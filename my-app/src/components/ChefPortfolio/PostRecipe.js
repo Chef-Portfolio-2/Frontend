@@ -5,8 +5,11 @@ import './ChefPortfolioPage.css'
  const PostRecipe = (recipe) => {
     const defaultRecipe = {
         title: '',
-        image: '',
-        type: ''
+        photo: '',
+        meal_type: '',
+        chef_name:'',
+        instructions: '',
+        ingredients: ''
     }
     const [postRecipe, setPostRecipe] = useState(defaultRecipe);
     
@@ -29,18 +32,25 @@ import './ChefPortfolioPage.css'
         <div className='postRecipeContainer'>
             <h6>Add A Recipe</h6>
             <form onSubmit={handleSubmit}>
-                <input className='imageFile'
-                    type='file'
-                    name='file'
-                    value={recipe.image}
+            <input className='textFile'
+                    type='text'
+                    name='chef_name'
+                    placeholder='Name'
+                    value={recipe.chef_name}
                     onChange={handleChange}
                 />
-                
                 <input className='textFile'
                     type='text'
                     name='title'
                     placeholder= 'Title'
                     value={recipe.title}
+                    onChange={handleChange}
+                />                
+                <input className='textFile'
+                    type='text'
+                    name='photo'
+                    placeholder= 'Image Url'
+                    value={recipe.photo}
                     onChange={handleChange}
                 />
                 <input className='textFile'
@@ -48,6 +58,13 @@ import './ChefPortfolioPage.css'
                     name='type'
                     placeholder='Type'
                     value={recipe.type}
+                    onChange={handleChange}
+                />
+                 <input className='textFile'
+                    type='textarea'
+                    name='ingredients'
+                    placeholder='Ingredients'
+                    value={recipe.ingredients}
                     onChange={handleChange}
                 />
                  <textarea className='textFile'
