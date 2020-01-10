@@ -6,6 +6,7 @@ import styled from "styled-components";
 import './Login.css';
 import {axiosWithAuth} from './axiosAuthenticate/axiosWithAuth';
 import { Link } from 'react-router-dom';
+import NavBarSignin from './NavBars/NavBarSignin';
 
 // styles
 
@@ -74,6 +75,7 @@ function LoginForm({errors, touched, Values}) {
  
     return (
         <>
+        <NavBarSignin/>
       <Container className="container">
         <Form 
           // onSubmit={this.handleSubmit}
