@@ -39,32 +39,31 @@ function App() {
 
 
   return (
-  <Router>
-    <div>
-    <Switch>       
-      <PrivateRoute path="/chefportfolio" component={ChefPortfolioPage} /> 
-      <PrivateRoute exact path="/" component={Home} />
-     
-      <Route path = "/login" component={LoginForm} />
-      <Route path="/recipepage" component={RecipePage} />
-      <Route path='/Register' component={Register} /><Route
-        exact
-        path="/recipelist"
-        render={routeProps => {
-          return <RecipeList {...routeProps} recipes={recipes} />;
-        }}
-      />
-      <Route
-        path="/recipelist/:id"
-        render={routeProps => {
-          return <RecipePage {...routeProps} recipes={recipes} />;
-        }}/>
+    <Router>
+      <div>
+        <Switch>
+          <PrivateRoute path="/chefportfolio" component={ChefPortfolioPage} />
+          <PrivateRoute exact path="/" component={Home} />
+          <Route path="/contact" component={ContactForm} />
+          <Route path="/login" component={LoginForm} />
+          <Route path="/recipepage" component={RecipePage} />
+          <Route path="/Register" component={Register} />
+          <Route
+            exact
+            path="/recipelist"
+            render={routeProps => {
+              return <RecipeList {...routeProps} recipes={recipes} />;
+            }}
+          />
+          <Route
+            path="/recipelist/:id"
+            render={routeProps => {
+              return <RecipePage {...routeProps} recipes={recipes} />;
+            }}
+          />
         </Switch>
-      
-
-
-    </div>
-  </Router>
+      </div>
+    </Router>
   );
 }
 
