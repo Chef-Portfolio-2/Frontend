@@ -6,6 +6,8 @@ import styled from "styled-components";
 import './Login.css';
 import {axiosWithAuth} from './axiosAuthenticate/axiosWithAuth';
 import { Link } from 'react-router-dom';
+import NavBarSignin from './NavBars/NavBarSignin';
+import Footer from './Footer';
 
 // styles
 
@@ -70,9 +72,11 @@ margin-left: 40%;
 
 function LoginForm({errors, touched, Values}) {
 
+  
  
     return (
         <>
+        <NavBarSignin/>
       <Container className="container">
         <Form 
           // onSubmit={this.handleSubmit}
@@ -109,11 +113,12 @@ function LoginForm({errors, touched, Values}) {
           >
             Login!
           </Button>
-          <Link to="/register" className="newsUser">New User? Register Here!</Link>
+          <Link to="/register" className="newUser">New User? Register Here!</Link>
         </Form>
       
 
       </Container>
+      <Footer />
       </>
     );
 }
@@ -146,12 +151,13 @@ function LoginForm({errors, touched, Values}) {
                   localStorage.setItem('chef_id', res.data.id);
                   props.history.push('/chefportfolio');
                   resetForm();
-                  setSubmitting(false);
+                
+                  
                   
                 })
                 .catch(err => {
                   console.log(err); // There was an error creating the data and logs to console
-                  setSubmitting(false);
+                  
                 });
             }
         // axios post here
