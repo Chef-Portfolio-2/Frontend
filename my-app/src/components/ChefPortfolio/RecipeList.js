@@ -8,7 +8,7 @@ const Container = styled.div`
     display: flex; 
     justify-content: space-around;
     width: 75%;
-    margin: 5vh auto;
+    margin: auto;
     align-items: center;
 `;
 
@@ -76,7 +76,6 @@ const Body = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  border: 1px solid red;
 `;
 
 
