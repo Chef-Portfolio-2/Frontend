@@ -3,6 +3,7 @@ import {axiosWithAuth} from '../axiosAuthenticate/axiosWithAuth';
 import { Link }from 'react-router-dom';
 import './Register.css';
 import NavBarSignin from '../NavBars/NavBarSignin';
+import Footer from "../Footer";
 // const initialUser = {
 //   first_name: '',
 //   last_name: '',
@@ -163,6 +164,7 @@ import NavBarSignin from '../NavBars/NavBarSignin';
         } */}
         </div>
       </div>
+      <Footer />
       </>
     )
   

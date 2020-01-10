@@ -7,6 +7,7 @@ import './Login.css';
 import {axiosWithAuth} from './axiosAuthenticate/axiosWithAuth';
 import { Link } from 'react-router-dom';
 import NavBarSignin from './NavBars/NavBarSignin';
+import Footer from './Footer';
 
 // styles
 
@@ -117,6 +118,7 @@ function LoginForm({errors, touched, Values}) {
       
 
       </Container>
+      <Footer />
       </>
     );
 }

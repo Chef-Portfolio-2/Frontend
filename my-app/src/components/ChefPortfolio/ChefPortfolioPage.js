@@ -5,6 +5,7 @@ import {axiosWithAuth} from '../axiosAuthenticate/axiosWithAuth';
 import './ChefPortfolioPage.css';
 import PostRecipe from './PostRecipe.js';
 import NavBarSignOut from '../NavBars/NavBarSignOut';
+import Footer from '../Footer';
 
 function ChefPortfolioPage() {
     //call on axios to get the chef's login info to populate here
@@ -42,6 +43,7 @@ function ChefPortfolioPage() {
             </div>
             
             <ChefRecipeList recipes={chef} updateRecipes={setChef}/>
+            <Footer />
         </>
     )
 }
