@@ -82,7 +82,7 @@ console.log(recipe);
       <Container>
         <img
           className="recipe-page-image"
-          src="https://i.cbc.ca/1.5191482.1564695162!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/chocolate-tahini-fudge-sundaes.jpg"
+          src={recipe.photo}
         />
         <RecipeHeader>
           <RecipeInfo>
