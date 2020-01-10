@@ -17,7 +17,7 @@ import './ChefPortfolioPage.css'
     const handleSubmit = (event) => {
         event.preventDefault();
         axiosWithAuth()
-        .post( 'http://localhost:3000/recipes', postRecipe)
+        .post( 'https://chef-portfolio-2.herokuapp.com/api/posts', postRecipe)
         .then((res) => {
             console.log(res);
             setPostRecipe(defaultRecipe);

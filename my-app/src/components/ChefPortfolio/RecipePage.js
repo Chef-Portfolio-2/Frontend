@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import styled from "styled-components";
 import NavBarSignin from '../NavBars/NavBarSignin';
+import Footer from '../Footer';
 
 
 const Container = styled.div`
@@ -18,7 +19,7 @@ const RecipeHeader = styled.div`
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    
+    align-items: center;
 
 `
 
@@ -38,8 +39,13 @@ const RecipeAuthor = styled.h3`
     margin: 5px 0px 5px 0px;
 `
 
-const RecipeContent = styled.p`
+const RecipeIngredients = styled.p`
     font-size: 1rem;
+    margin-top: 10px;
+`
+
+const RecipeInstructions = styled.p`
+  font-size: 1rem;
 `
 
 const RecipeTags = styled.div`
@@ -49,6 +55,7 @@ const RecipeTags = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   height:100%;
+  justify-content:center;
 `;
 
 const RecipeTag = styled.div`
@@ -70,43 +77,34 @@ const recipe = recipeResults[0];
 console.log(recipe);
 
   return (
-      <>
-        <NavBarSignin />
-        <Container>
-          <img
-            className="recipe-page-image"
-            src="https://i.cbc.ca/1.5191482.1564695162!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/chocolate-tahini-fudge-sundaes.jpg"
-          />
-          <RecipeHeader>
-            <RecipeInfo>
-              <RecipeTitle>Blah</RecipeTitle>
-              <RecipeAuthor>Jeff Breig</RecipeAuthor>
-            </RecipeInfo>
-            <RecipeTags>
-              <RecipeTag>Ice Cream</RecipeTag>
-            </RecipeTags>
-          </RecipeHeader>
-          <RecipeContent>
-            We'll make some happy little bushes here. Everyone is going to see
-            things differently - and that's the way it should be. Put it in, leave
-            it alone. Just take out whatever you don't want. It'll change your
-            entire perspective. It's a very cold picture, I may have to go get my
-            coat. It’s about to freeze me to death. That easy.
-            <br />
-            <br />
-            Let's get wild today. If you've been in Alaska less than a year you're
-            a Cheechako. You can do anything here. So don't worry about it. It's
-            amazing what you can do with a little love in your heart. These little
-            son of a guns hide in your brush and you just have to push them out.
-            It is a lot of fun.
-            <br />
-            <br />I get carried away with this brush cleaning. Use your
-            imagination, let it go. Don't forget to tell these special people in
-            your life just how special they are to you.
-          </RecipeContent>
-        </Container>
-      </>
-    );
+    <>
+      <NavBarSignin />
+      <Container>
+        <img
+          className="recipe-page-image"
+          src="https://i.cbc.ca/1.5191482.1564695162!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/chocolate-tahini-fudge-sundaes.jpg"
+        />
+        <RecipeHeader>
+          <RecipeInfo>
+            <RecipeTitle>{recipe.title}</RecipeTitle>
+            <RecipeAuthor>{recipe.chef_name}</RecipeAuthor>
+          </RecipeInfo>
+          <RecipeTags>
+            <RecipeTag>{recipe.meal_type}</RecipeTag>
+          </RecipeTags>
+        </RecipeHeader>
+        <RecipeIngredients>
+          Ingredients: <br/>
+          {recipe.ingredients}
+        </RecipeIngredients>
+        <RecipeInstructions>
+          Instructions: <br/>
+          {recipe.instructions}
+        </RecipeInstructions>
+      </Container>
+      <Footer/>
+    </>
+  );
 }
 
 export default RecipePage;

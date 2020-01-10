@@ -1,0 +1,28 @@
+.text {
+    color: #8B0000;
+    display: flex;
+    align-content: flex-start;
+    justify-content: flex-start;
+    padding-right: 5%;
+    font-weight: 600;
+
+}
+
+.emailInput, .nameInput, .messageInput {
+    border: 2px solid black;
+    width: 40%;
+
+
+    
+}
+
+.contact{
+    display: flex; 
+    flex-direction: column;
+
+    justify-content: space-around;
+}
+
+.submit{
+
+}
