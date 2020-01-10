@@ -1,6 +1,4 @@
-import React, {useState} from 'react';
-import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {axiosWithAuth} from '../axiosAuthenticate/axiosWithAuth.js'
 import './ChefPortfolioPage.css';
@@ -19,20 +17,25 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
         setEditing(true);
         setRecipeToEdit(recipe);
     };
+    useEffect(() => {
+
+    }, [recipes]);
 
     const saveEdit = e => {
         e.preventDefault();
         axiosWithAuth()
-        .put(`https://chef-portfolio-2.herokuapp.com/api/posts/${recipeToEdit}`, recipeToEdit)
+        .put(`https://chef-portfolio-2.herokuapp.com/api/posts/${recipeToEdit.id}`, recipeToEdit)
         .then(res => {
             setEditing(false)
         })
     };
 
     const deleteRecipe = recipe => {
-        axios
-        .delete(`https://chef-portfolio-2.herokuapp.com/api/posts${recipe.id}`)
-        .then(res => console.log(res))
+        axiosWithAuth()
+        .delete(`https://chef-portfolio-2.herokuapp.com/api/posts/${recipe.id}`)
+        .then(res => {
+            console.log(res)
+        })
         .catch(err => console.log(err))
     };
     
@@ -43,7 +46,7 @@ const ChefRecipeList = ({recipes, updateRecipes}) => {
             <section  className = 'chef-list grid-view'>
                 {recipes.map( chef => (
                     <div width ='400' className='recipeList' key={chef.id}>
-                        <img width='350'
+                        <img width='350' height='250'
                             className ='recipeImg'
                             src = {chef.photo}
                             alt = {chef.title}
