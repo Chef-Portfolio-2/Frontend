@@ -1,5 +1,5 @@
   
-import React, { useEffect } from 'react';
+import React from 'react';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import styled from "styled-components";
@@ -110,7 +110,7 @@ function LoginForm({errors, touched, Values}) {
           >
             Login!
           </Button>
-          <Link to="/register" className="newsUser">New User? Register Here!</Link>
+          <Link to="/register" className="newUser">New User? Register Here!</Link>
         </Form>
       
 
