@@ -15,7 +15,6 @@ const Container = styled.div`
 const Card = styled.div`
     display: flex;
     flex-direction: column;
-    height: 325px;
     width: 100%;
     border: 1px solid lightgray;
     margin: 5px 5px;
@@ -24,7 +23,7 @@ const Card = styled.div`
 const CardTitle=styled.h2`
     color: #1a1a1a;
     font-size: 18px;
-    text-align: left;
+    text-align: center;
     border-bottom: 1px solid lightgray;
     padding: 5px;
 `
@@ -61,7 +60,7 @@ const CardDescription = styled.p`
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    height: 15%;
+
 
 `
 
@@ -72,31 +71,41 @@ const StyledLink = styled(Link)`
     }
 `;
 
+const Body = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  border: 1px solid red;
+`;
+
 
 function RecipeList({recipes}) {
     console.log("yo");
 console.log(recipes);
 
     return (
-        <>
-        <NavBarSignin />
-      <Container>
-        {recipes.map(recipe => {
-            
-            return <StyledLink to={`recipelist/${recipe.id}`}>
-                        <Card key={recipe.id}>
-                        <CardImage src={recipe.photo} />
-                        <CardTitle>{recipe.title}</CardTitle>
-                        <CardAuthorAndType>
-                            <CardAuthor>{recipe.chef_name}</CardAuthor>
-                            <CardType>{recipe.meal_type}</CardType>
-                        </CardAuthorAndType>
-                        <CardDescription></CardDescription>
-                    </Card>
+      <>
+        <Body>
+          <NavBarSignin />
+          <Container>
+            {recipes.map(recipe => {
+              return (
+                <StyledLink to={`recipelist/${recipe.id}`}>
+                  <Card key={recipe.id}>
+                    <CardImage src={recipe.photo} />
+                    <CardTitle>{recipe.title}</CardTitle>
+                    <CardAuthorAndType>
+                      <CardAuthor>{recipe.chef_name}</CardAuthor>
+                      <CardType>{recipe.meal_type}</CardType>
+                    </CardAuthorAndType>
+                  </Card>
                 </StyledLink>
-        })}
-      </Container>
-      <Footer/>
+              );
+            })}
+          </Container>
+          <Footer />
+        </Body>
       </>
     );
 }

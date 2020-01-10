@@ -1,11 +1,7 @@
 .text {
     color: #8B0000;
-    display: flex;
-    align-content: flex-start;
-    justify-content: flex-start;
-    padding-right: 5%;
     font-weight: 600;
-
+    display: inline;
 }
 
 .emailInput, .nameInput, .messageInput {
@@ -16,9 +12,9 @@
     
 }
 
-.contact{
+.contact-form{
     display: flex; 
     flex-direction: column;
-
-    justify-content: space-around;
+    justify-content: space-between;
+    height: 75%
 }
