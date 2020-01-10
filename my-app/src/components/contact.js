@@ -127,8 +127,9 @@ function ContactForm({ errors, touched, Values }) {
             </Button>
           </Form>
         </Container>
-        <Footer />
+        
       </Body>
+      <Footer />
     </>
   );
 }

@@ -104,8 +104,9 @@ console.log(recipes);
               );
             })}
           </Container>
-          <Footer />
+          
         </Body>
+        <Footer />
       </>
     );
 }
