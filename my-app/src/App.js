@@ -40,7 +40,7 @@ function App() {
 
   return (
     <Router>
-      <div>
+      
         <Switch>
           <PrivateRoute path="/chefportfolio" component={ChefPortfolioPage} />
           <PrivateRoute exact path="/" component={Home} />
@@ -62,7 +62,7 @@ function App() {
             }}
           />
         </Switch>
-      </div>
+     
     </Router>
   );
 }
