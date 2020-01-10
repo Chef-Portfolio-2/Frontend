@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import NavBarSignin from '../NavBars/NavBarSignin';
+import Footer from '../Footer';
 
 const Container = styled.div`
     display: flex; 
@@ -15,7 +16,7 @@ const Card = styled.div`
     display: flex;
     flex-direction: column;
     height: 325px;
-    width: 30%;
+    width: 100%;
     border: 1px solid lightgray;
     margin: 5px 5px;
 `;
@@ -66,7 +67,6 @@ const CardDescription = styled.p`
 
 const StyledLink = styled(Link)`
     text-decoration: none;
-
     &:focus, &:hover, &:visited, &:link, &:active {
         text-decoration: none;
     }
@@ -96,6 +96,7 @@ console.log(recipes);
                 </StyledLink>
         })}
       </Container>
+      <Footer/>
       </>
     );
 }

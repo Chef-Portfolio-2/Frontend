@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import styled from "styled-components";
 import NavBarSignin from '../NavBars/NavBarSignin';
+import Footer from '../Footer';
 
 
 const Container = styled.div`
@@ -18,7 +19,7 @@ const RecipeHeader = styled.div`
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    
+    align-items: center;
 
 `
 
@@ -38,8 +39,13 @@ const RecipeAuthor = styled.h3`
     margin: 5px 0px 5px 0px;
 `
 
-const RecipeContent = styled.p`
+const RecipeIngredients = styled.p`
     font-size: 1rem;
+    margin-top: 10px;
+`
+
+const RecipeInstructions = styled.p`
+  font-size: 1rem;
 `
 
 const RecipeTags = styled.div`
@@ -49,6 +55,7 @@ const RecipeTags = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   height:100%;
+  justify-content:center;
 `;
 
 const RecipeTag = styled.div`
@@ -70,29 +77,34 @@ const recipe = recipeResults[0];
 console.log(recipe);
 
   return (
-      <>
-        <NavBarSignin />
-        <Container>
-          <img
-            className="recipe-page-image"
-            src="https://i.cbc.ca/1.5191482.1564695162!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/chocolate-tahini-fudge-sundaes.jpg"
-          />
-          <RecipeHeader>
-            <RecipeInfo>
-              <RecipeTitle>{recipe.title}</RecipeTitle>
-              <RecipeAuthor>{recipe.chef_name}</RecipeAuthor>
-            </RecipeInfo>
-            <RecipeTags>
-              <RecipeTag>{recipe.meal_type}</RecipeTag>
-            </RecipeTags>
-          </RecipeHeader>
-          <RecipeContent>
-            {recipe.ingredients}
-            {recipe.instructions}
-          </RecipeContent>
-        </Container>
-      </>
-    );
+    <>
+      <NavBarSignin />
+      <Container>
+        <img
+          className="recipe-page-image"
+          src="https://i.cbc.ca/1.5191482.1564695162!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/chocolate-tahini-fudge-sundaes.jpg"
+        />
+        <RecipeHeader>
+          <RecipeInfo>
+            <RecipeTitle>{recipe.title}</RecipeTitle>
+            <RecipeAuthor>{recipe.chef_name}</RecipeAuthor>
+          </RecipeInfo>
+          <RecipeTags>
+            <RecipeTag>{recipe.meal_type}</RecipeTag>
+          </RecipeTags>
+        </RecipeHeader>
+        <RecipeIngredients>
+          Ingredients: <br/>
+          {recipe.ingredients}
+        </RecipeIngredients>
+        <RecipeInstructions>
+          Instructions: <br/>
+          {recipe.instructions}
+        </RecipeInstructions>
+      </Container>
+      <Footer/>
+    </>
+  );
 }
 
 export default RecipePage;

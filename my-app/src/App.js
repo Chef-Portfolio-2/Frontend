@@ -13,6 +13,7 @@ import './App.css';
 import ChefPortfolioPage from './components/ChefPortfolio/ChefPortfolioPage';
 import Register from './components/ChefPortfolio/Register.js';
 import styled from "styled-components";
+import ContactForm from "./components/contact";
 
 const NavBar=styled.nav`
   display: flex;
@@ -55,6 +56,7 @@ function App() {
           {/* will change ChefPortolioPage to Private Route later */}
           <Route path="/chefportfolio/" component={ChefPortfolioPage} />
           <Route path="/Register" component={Register} />
+          <Route path="/contact" component={ContactForm} />
           <Route
             exact
             path="/recipelist"

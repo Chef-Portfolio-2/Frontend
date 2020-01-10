@@ -11,6 +11,7 @@ justify-content: space-around;
 `
 const Container = styled.footer`
 background: #32b672; 
+margin-top: auto;
 `
 
 
