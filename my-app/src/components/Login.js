@@ -1,5 +1,5 @@
   
-import React from 'react';
+import React, { useEffect } from 'react';
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import styled from "styled-components";
@@ -70,6 +70,7 @@ margin-left: 40%;
 
 function LoginForm({errors, touched, Values}) {
 
+  
  
     return (
         <>
@@ -133,7 +134,11 @@ function LoginForm({errors, touched, Values}) {
               .required("Password is required")
           }),
         // handle submit
+        
+      
         handleSubmit (values, {props, resetForm}) {
+
+            
               axiosWithAuth()
                 .post("https://chef-portfolio-2.herokuapp.com/api/auth/login", values)
                 .then(res => {
@@ -141,6 +146,7 @@ function LoginForm({errors, touched, Values}) {
                   localStorage.setItem('token', res.data.payload);
                   props.history.push('/chefportfolio');
                   resetForm();
+                
                   
                   
                 })
