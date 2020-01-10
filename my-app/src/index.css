@@ -46,3 +46,8 @@ code {
   width: 80vw;
   margin: auto;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+}
