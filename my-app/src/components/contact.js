@@ -7,6 +7,7 @@ import { axiosWithAuth } from "./axiosAuthenticate/axiosWithAuth";
 import { Link } from "react-router-dom";
 import NavBarSignin from "./NavBars/NavBarSignin";
 import Footer from "./Footer";
+import axios from 'axios';
 
 // styles
 
@@ -26,24 +27,28 @@ const Container = styled.div`
 
 const Welcome = styled.h1`
   color: white;
+  margin-bottom: 5%;
 `;
 const Name = styled.div`
   display: flex;
-  align-content: center;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding-top: 10%;
+  margin-bottom: 5%;
 `;
 const Email = styled.div`
   display: flex;
-  align-content: center;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding-bottom: 10%;
+  margin-bottom: 5%;
 `;
 const Message = styled.div`
   display: flex;
-  align-content: center;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding-bottom: 10%;
+
 `;
 const Button = styled.button`
   box-shadow: 3px 4px 0px 0px black;
@@ -65,9 +70,7 @@ const Button = styled.button`
 const Body = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: space-evenly;
-
-border: 1px solid red;
+justify-content: space-between;
 `
 
 function ContactForm({ errors, touched, Values }) {
@@ -78,14 +81,14 @@ function ContactForm({ errors, touched, Values }) {
         <Container className="container">
           <Form
             // onSubmit={this.handleSubmit}
-            className="contact"
+            className="contact-form"
           >
             <Welcome className="Welcome">
               Questions? Concerns? Get in touch.
             </Welcome>
             <Name>
               {touched.name && errors.name && (
-                <p className="text">{errors.name}</p>
+                <div className="text">{errors.name}</div>
               )}
               <Field
                 type="text"
@@ -97,7 +100,7 @@ function ContactForm({ errors, touched, Values }) {
             </Name>
             <Email>
               {touched.email && errors.email && (
-                <p className="text">{errors.email}</p>
+                <div className="text">{errors.email}</div>
               )}
               <Field
                 type="email"
@@ -109,7 +112,7 @@ function ContactForm({ errors, touched, Values }) {
             </Email>
             <Message>
               {touched.message && errors.message && (
-                <p className="text">{errors.message}</p>
+                <div className="text">{errors.message}</div>
               )}
               <Field
                 component="textarea"
@@ -143,24 +146,21 @@ const FormikLoginForm = withFormik({
     name: Yup.string().required("Your name is required"),
     email: Yup.string().required("Please use a valid email address"),
     message: Yup.string().required("Please submit a message")
-  })
+  }),
   // handle submit
-  //   handleSubmit(values, { props, resetForm, setSubmitting }) {
-  //     axiosWithAuth()
-  //       .post("https://chef-portfolio-2.herokuapp.com/api/auth/login", values)
-  //       .then(res => {
-  //         console.log(values); // Data was created successfully and logs to console
-  //         localStorage.setItem("token", res.data.payload);
-  //         props.history.push("/chefportfolio");
-  //         resetForm();
-  //         setSubmitting(false);
-  //       })
-  //       .catch(err => {
-  //         console.log(err); // There was an error creating the data and logs to console
-  //         setSubmitting(false);
-  //       });
-  //   }
-  // axios post here
+  handleSubmit(values, { setStatus, resetForm }) {
+    console.log("submitting", values);
+    axios
+      .post("https://reqres.in/api/users/", values)
+      .then(res => {
+        console.log("success", res);
+        setStatus(res.data);
+        alert("Thanks for contacting us!")
+        //clears form inputs, from FormikBag
+        resetForm();
+      })
+      .catch(err => console.log(err.response));
+  }
 })(ContactForm);
 
 export default FormikLoginForm;
