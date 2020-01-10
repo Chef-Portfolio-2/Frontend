@@ -12,6 +12,10 @@ const NavBar=styled.nav`
 `
 
 const NavBarSignOut = () =>{
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        console.log('logged out button triggered')
+    }
     return (
         
       <NavBar>
@@ -27,7 +31,7 @@ const NavBarSignOut = () =>{
         <Link to="/chefportfolio" className="nav-links">
             Portfolio
         </Link>
-        <Link to="/login" className="nav-links">
+        <Link to="/login" className="nav-links" onClick={handleLogout}>
             Sign Out
         </Link>
     </NavBar>
