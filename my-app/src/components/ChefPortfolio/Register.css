@@ -56,7 +56,7 @@
     padding: 5px 16px 0;
     width: auto;
     height: 37px;
-    background: red;
+    background: #32b672;
     border-radius: 3px;
     background-image: linear-gradient(-180deg, hsla(0,0%,100%, .1), rgba(0,0,0,.1));
     font-size: 15px;
@@ -74,7 +74,7 @@
 }
 
 .registerPage .registerFooter span{
-    color: red;
+    color: #32b672;
     text-decoration: none !important;
 }
 .registerPage .registerFooter span:focus{

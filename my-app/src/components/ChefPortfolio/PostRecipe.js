@@ -4,12 +4,13 @@ import './ChefPortfolioPage.css'
 
  const PostRecipe = (recipe) => {
     const defaultRecipe = {
+        chef_name:'',
         title: '',
         photo: '',
         meal_type: '',
-        chef_name:'',
-        instructions: '',
-        ingredients: ''
+       ingredients: '',
+        instructions: ''
+        
     }
     const [postRecipe, setPostRecipe] = useState(defaultRecipe);
     
@@ -55,12 +56,12 @@ import './ChefPortfolioPage.css'
                 />
                 <input className='textFile'
                     type='text'
-                    name='type'
+                    name='meal_type'
                     placeholder='Type'
-                    value={recipe.type}
+                    value={recipe.meal_type}
                     onChange={handleChange}
                 />
-                 <input className='textFile'
+                 <textarea className='textFile'
                     type='textarea'
                     name='ingredients'
                     placeholder='Ingredients'
@@ -69,7 +70,7 @@ import './ChefPortfolioPage.css'
                 />
                  <textarea className='textFile'
                     type='textarea'
-                    name='type'
+                    name='instructions'
                     placeholder='Instructions'
                     value={recipe.instructions}
                     onChange={handleChange}
