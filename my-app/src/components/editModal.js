@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input, FormText, Col } from 'reactstrap';
 import './ChefPortfolio/ChefPortfolioPage.css';
 import {axiosWithAuth} from './axiosAuthenticate/axiosWithAuth.js'
+import EditPost from './EditPost';
 
 const initialRecipe = {
     recipe:""
@@ -36,27 +37,10 @@ const EditModal = ({recipes}) => {
       <Modal isOpen={modal} toggle={toggle} OnClick={() => editRecipe(recipes)} >
         <ModalHeader toggle={toggle}>Edit Recipe</ModalHeader>
         <ModalBody>
-          
-            <Form onSubmit={saveEdit} method="PUT">
-              <FormGroup row> 
-                <Label for="exampleFile" sm={2}>File</Label>
-                <Col sm={10}>
-                  <Input type="file" name="file" id="exampleFile"  />
-                  <FormText color="muted">
-                    Upload photos that are .JPEG, .JPG or .PNG.
-                  </FormText>
-                </Col>
-              </FormGroup>
-              <FormGroup>
-                <Label for="exampleText">Title</Label>
-                <Input type="text" name="text" id="exampleText" 
-                placeholder="Title" value={recipeToEdit.title} onChange={event => setRecipeToEdit({ ...recipeToEdit, title: event.target.value})} />
-              </FormGroup>
-            </Form>
+          <EditPost />
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>Save</Button>{' '}
-          <Button color="secondary" onClick={toggle} onClick={() => setEditing(false)}>Cancel</Button>
+       
         </ModalFooter>
       </Modal>
     </div>

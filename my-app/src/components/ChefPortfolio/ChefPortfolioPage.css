@@ -157,3 +157,29 @@ div .RecipeListTitle {
 .editButtonContainer .editModalButton {
     padding: 0px;
 }
+
+.editForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.EdittextFile{
+    width: 300px;
+    margin: 2%;
+    border-radius:5px;
+    border: 1px solid;
+}
+
+.editForm .reset {
+    width: 100px;
+    margin: 1%;
+    background: #32b672 ;
+    border: none;
+}
+
+.editForm .reset:hover {
+    background-color: #2ca063;
+
+}
