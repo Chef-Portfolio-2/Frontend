@@ -6,6 +6,7 @@ import Footer from '../Footer';
 
 const Container = styled.div`
     display: flex; 
+    flex-wrap: wrap;
     justify-content: space-around;
     width: 75%;
     margin: auto;
@@ -79,9 +80,11 @@ const Body = styled.div`
 `
 
 
-function RecipeList({recipes}) {
+function RecipeList({recipes, recipeCount}) {
     console.log("yo");
 console.log(recipes);
+recipeCount++;
+console.log(recipeCount);
 
     return (
       <>

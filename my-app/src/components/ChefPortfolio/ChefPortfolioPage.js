@@ -9,8 +9,7 @@ import Footer from '../Footer';
 
 function ChefPortfolioPage() {
     //call on axios to get the chef's login info to populate here
-    const [chef, setChef] = useState([]);
-
+    const [chef, setChef] = useState([]);;
     useEffect(() => {
         axiosWithAuth()
         .get('https://chef-portfolio-2.herokuapp.com/api/posts')
@@ -38,7 +37,7 @@ function ChefPortfolioPage() {
                     </div>
                 </div>
                 <div className='addRecipe'>
-                    <PostRecipe recipes={chef} updateRecipes={setChef}/>
+                    <PostRecipe recipes={chef} updateRecipes={setChef} />
                 </div>
             </div>
             
