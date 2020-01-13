@@ -145,8 +145,8 @@ function LoginForm({errors, touched, Values}) {
               axiosWithAuth()
                 .post("https://chef-portfolio-2.herokuapp.com/api/auth/login", values)
                 .then(res => {
-                  console.log(values);
-                  console.log(res) // Data was created successfully and logs to console
+                  // console.log(values);
+                  // console.log(res) // Data was created successfully and logs to console
                   localStorage.setItem('token', res.data.token);
                   localStorage.setItem('chef_id', res.data.id);
                   props.history.push('/chefportfolio');
