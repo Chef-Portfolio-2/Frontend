@@ -22,6 +22,7 @@ import ContactForm from "./components/contact";
 function App() {
 
   const [recipes, setRecipes] = useState([]);
+  const [recipeCount, setRecipeCount] = useState(1)
 
 
   useEffect(() => {
@@ -30,6 +31,7 @@ function App() {
 
       .then( res => {
           setRecipes(res.data);
+          setRecipeCount(1)
           console.log(res);
       })
       .catch(errors => {
@@ -42,7 +44,12 @@ function App() {
     <Router>
       
         <Switch>
-          <PrivateRoute path="/chefportfolio" component={ChefPortfolioPage} />
+        <Route
+            path="/chefportfolio"
+            render={routeProps => {
+              return <ChefPortfolioPage {...routeProps} recipes={recipes} recipeCount={recipeCount} setRecipeCount={setRecipeCount}/>;
+            }}
+          />
           <PrivateRoute exact path="/" component={Home} />
           <Route path="/contact" component={ContactForm} />
           <Route path="/login" component={LoginForm} />
@@ -52,7 +59,7 @@ function App() {
             exact
             path="/recipelist"
             render={routeProps => {
-              return <RecipeList {...routeProps} recipes={recipes} />;
+              return <RecipeList {...routeProps} recipes={recipes} recipeCount={recipeCount} />;
             }}
           />
           <Route

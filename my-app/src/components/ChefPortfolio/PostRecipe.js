@@ -13,7 +13,6 @@ import './ChefPortfolioPage.css'
         
     }
     const [postRecipe, setPostRecipe] = useState(defaultRecipe);
-    
     const handleChange = (event) => {
         setPostRecipe({ ...postRecipe, [event.target.name]: event.target.value });
     };
