@@ -80,11 +80,8 @@ const Body = styled.div`
 `
 
 
-function RecipeList({recipes, recipeCount}) {
-    console.log("yo");
+function RecipeList({recipes}) {
 console.log(recipes);
-recipeCount++;
-console.log(recipeCount);
 
     return (
       <>
